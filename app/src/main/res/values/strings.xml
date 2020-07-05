@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Wardrobe</string>
+    <string-array name="Spinner_type">
+        <item>โปรดเลือกประเภทเสื้อผ้า</item>
+        <item>เสื้อยืดแขนสั้น</item>
+        <item>เสื้อยืดแขนยาว</item>
+        <item>เสื้อเชิ้ตแขนสั้น</item>
+        <item>เสื้อเชิ้ตแขนยาว</item>
+        <item>เสื้อกันหนาว</item>
+        <item>เกางเกงขายาว</item>
+        <item>กางเกงขาสั้น</item>
+        <item>กระโปรง</item>
+    </string-array>
+    <string-array name="Spinner_Status">
+        <item>โปรดเลือกสถานะเสื้อผ้า</item>
+        <item>ยังไม่ได้ใช้งาน</item>
+        <item>กำลังใช้งาน</item>
+        <item>อยู่ในตะกร้าผ้า</item>
+        <item>ส่งซักรีด</item>
+    </string-array>
+
+</resources>
