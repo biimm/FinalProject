@@ -1,48 +1,31 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.FileProvider;
-import androidx.palette.graphics.Palette;
-
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.palette.graphics.Palette;
+
 
 public class Main3Activity extends AppCompatActivity {
     private static final int RQS_OPEN_IMAGE = 1;
@@ -74,6 +57,11 @@ public class Main3Activity extends AppCompatActivity {
     String selectv3 = "#0";
     String colorv3 = "#0";
 
+    String name_color = "";
+    String name_color1 = "";
+    String name_color2 = "";
+    String name_color3 = "";
+
     Button edit1,edit2,edit3;
     int counter = 0;
 
@@ -84,6 +72,8 @@ public class Main3Activity extends AppCompatActivity {
     boolean checkedit1 = false;
     boolean checkedit2 = false;
     boolean checkedit3 = false;
+
+    ArrayList<ColorName> colorList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +95,9 @@ public class Main3Activity extends AppCompatActivity {
 
         mImageView.setDrawingCacheEnabled(true);
         mImageView.buildDrawingCache(true);
+
+
+
 
         mChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,6 +152,36 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
+
+        final ArrayList<ColorName> colorList = new ArrayList<ColorName>();
+        colorList.add(new ColorName("Black", 0x00, 0x00, 0x00)); // BW
+        colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
+        colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
+        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+
+        colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
+        colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
+        colorList.add(new ColorName("Yellow", 0xff, 0xff, 0x00)); // hot
+
+        colorList.add(new ColorName("Green", 0x00, 0xff, 0x00)); // cold
+        colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
+        colorList.add(new ColorName("Purple", 0x80, 0x00, 0x80)); // cold
+
+        colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
+        colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
+        colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
+        colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
+        colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
+
+
+        colorList.add(new ColorName("Lightpink", 0xff, 0xb6, 0xc1)); // pastel
+        colorList.add(new ColorName("Lightcoral" , 0xf0, 0x80, 0x80)); //pastel
+        colorList.add(new ColorName("Lightblue" ,0xad, 0xd8, 0xe6)); // pastel
+        colorList.add(new ColorName("lightSalmon" , 0xff, 0xa0, 0x7a)); // pastel
+        colorList.add(new ColorName("Lightyellow" , 0xff, 0xff, 0xe0)); //pastel
+        colorList.add(new ColorName("Lightgreen" , 0x90, 0xee, 0x90)); // pastel
+
+
         edit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,6 +190,7 @@ public class Main3Activity extends AppCompatActivity {
                 checkBox1.setText("โปรดเลือกสีอีกครั้ง");
                 v1 = "#0";
                 colorv1 = "#0";
+
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -174,10 +198,36 @@ public class Main3Activity extends AppCompatActivity {
                             if(checkedit1 == true) {
                                 Bitmap bitmap = mImageView.getDrawingCache();
                                 int pixel = bitmap.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
-                                int r = Color.red(pixel);
-                                int g = Color.green(pixel);
-                                int b = Color.blue(pixel);
-                                String hex = String.format("#%02x%02x%02x", r, g, b);
+                                int redvalue = Color.red(pixel);
+                                int greenvalue = Color.green(pixel);
+                                int bluevalue = Color.blue(pixel);
+
+
+                                int min = Integer.MAX_VALUE;
+                                int name = 0;
+                                int mse_correct;
+                                String current_name = "" ;
+                                int mse1 , mse2 , mse3;
+                                //ColorName closestMatch = new ColorName();
+                                for(int i=0;i<colorList.size();i++){
+
+                                    mse1 = Math.abs(colorList.get(i).getR()- redvalue);
+                                    mse2 = Math.abs(colorList.get(i).getG() - greenvalue);
+                                    mse3 = Math.abs(colorList.get(i).getB() - bluevalue);
+
+                                    mse_correct = mse1+mse2+mse3;
+                                    //System.out.println("1---"+mse1+" 2---"+ mse2+" 3---"+mse3);
+                                    if(mse_correct < min){
+                                        min = mse_correct;
+                                        name = mse_correct;
+                                        current_name = colorList.get(i).getName();
+                                        //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
+                                    }
+                                }
+                                name_color = current_name;
+                                System.out.println("NAME COLOR : "+current_name);
+
+                                String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
                                 v1 = hex;
                                 colorv1 = v1;
                                 checkBox1.setBackgroundColor(Color.parseColor(hex));
@@ -207,10 +257,35 @@ public class Main3Activity extends AppCompatActivity {
                             if(checkedit2 == true) {
                                 Bitmap bitmap = mImageView.getDrawingCache();
                                 int pixel = bitmap.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
-                                int r = Color.red(pixel);
-                                int g = Color.green(pixel);
-                                int b = Color.blue(pixel);
-                                String hex = String.format("#%02x%02x%02x", r, g, b);
+                                int redvalue = Color.red(pixel);
+                                int greenvalue = Color.green(pixel);
+                                int bluevalue = Color.blue(pixel);
+
+                                int min = Integer.MAX_VALUE;
+                                int name = 0;
+                                int mse_correct;
+                                String current_name = "" ;
+                                int mse1 , mse2 , mse3;
+                                //ColorName closestMatch = new ColorName();
+                                for(int i=0;i<colorList.size();i++){
+
+                                    mse1 = Math.abs(colorList.get(i).getR()- redvalue);
+                                    mse2 = Math.abs(colorList.get(i).getG() - greenvalue);
+                                    mse3 = Math.abs(colorList.get(i).getB() - bluevalue);
+
+                                    mse_correct = mse1+mse2+mse3;
+                                    //System.out.println("1---"+mse1+" 2---"+ mse2+" 3---"+mse3);
+                                    if(mse_correct < min){
+                                        min = mse_correct;
+                                        name = mse_correct;
+                                        current_name = colorList.get(i).getName();
+                                        //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
+                                    }
+                                }
+                                name_color = current_name;
+                                System.out.println("NAME COLOR : "+current_name);
+
+                                String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
                                 v2 = hex;
                                 colorv2 = v2;
                                 checkBox2.setBackgroundColor(Color.parseColor(hex));
@@ -241,10 +316,37 @@ public class Main3Activity extends AppCompatActivity {
                             if(checkedit3 == true) {
                                 Bitmap bitmap = mImageView.getDrawingCache();
                                 int pixel = bitmap.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
-                                int r = Color.red(pixel);
-                                int g = Color.green(pixel);
-                                int b = Color.blue(pixel);
-                                String hex = String.format("#%02x%02x%02x", r, g, b);
+                                int redvalue = Color.red(pixel);
+                                int greenvalue = Color.green(pixel);
+                                int bluevalue = Color.blue(pixel);
+
+                                int min = Integer.MAX_VALUE;
+                                int name = 0;
+                                int mse_correct;
+                                String current_name = "" ;
+                                int mse1 , mse2 , mse3;
+                                //ColorName closestMatch = new ColorName();
+                                for(int i=0;i<colorList.size();i++){
+
+                                    mse1 = Math.abs(colorList.get(i).getR()- redvalue);
+                                    mse2 = Math.abs(colorList.get(i).getG() - greenvalue);
+                                    mse3 = Math.abs(colorList.get(i).getB() - bluevalue);
+
+                                    mse_correct = mse1+mse2+mse3;
+                                    //System.out.println("1---"+mse1+" 2---"+ mse2+" 3---"+mse3);
+                                    if(mse_correct < min){
+                                        min = mse_correct;
+                                        name = mse_correct;
+                                        current_name = colorList.get(i).getName();
+                                        //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
+                                    }
+                                }
+
+                                name_color = current_name;
+
+                                System.out.println("NAME COLOR : "+current_name);
+
+                                String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
                                 v3 = hex;
                                 colorv3 = v3;
                                 checkBox3.setBackgroundColor(Color.parseColor(hex));
@@ -266,6 +368,8 @@ public class Main3Activity extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c1", Toast.LENGTH_SHORT).show();
                     selectv1 = colorv1;
                     System.out.println(selectv1);
+                    System.out.println("name_select : " + name_color1);
+                    name_color = name_color1;
                 } else {
                     selectv1 = "#0";
                 }
@@ -278,7 +382,8 @@ public class Main3Activity extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c2", Toast.LENGTH_SHORT).show();
                     selectv2 = colorv2;
                     System.out.println(selectv2);
-
+                    System.out.println("name_select : " + name_color2);
+                    name_color = name_color2;
                 } else {
                     selectv2 = "#0";
                 }
@@ -289,8 +394,10 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
                     //Toast.makeText(Main3Activity.this, "select c3", Toast.LENGTH_SHORT).show();
-                    selectv3 = colorv3;
+                     selectv3 = colorv3;
                     System.out.println(selectv3);
+                    System.out.println("name_select : " + name_color3);
+                    name_color = name_color3;
                 } else {
                     selectv3 = "#0";
                 }
@@ -303,11 +410,11 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Main3Activity.this,Main4Activity.class);
-
                 intent.putExtra("image" , targetUri.toString());
                 intent.putExtra("color1", selectv1);
                 intent.putExtra("color2", selectv2);
                 intent.putExtra("color3", selectv3);
+                intent.putExtra("colorname" , name_color);
 
                 startActivity(intent);
             }
@@ -382,22 +489,123 @@ public class Main3Activity extends AppCompatActivity {
             }
         }
 
-        //extract prominent colors
+
+    //extract dominent colors
         private void extractProminentColors(Bitmap bitmap){
             int defaultColor = 0x000000;
 
+            String current_name = "" ;
+
+            final ArrayList<ColorName> colorList = new ArrayList<ColorName>();
+            colorList.add(new ColorName("Black", 0x00, 0x00, 0x00)); // BW
+            colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
+            colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
+            colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+
+            colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
+            colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
+            colorList.add(new ColorName("Yellow", 0xff, 0xff, 0x00)); // hot
+
+            colorList.add(new ColorName("Green", 0x00, 0xff, 0x00)); // cold
+            colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
+            colorList.add(new ColorName("Purple", 0x80, 0x00, 0x80)); // cold
+
+            colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
+            colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
+            colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
+            colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
+            colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
+
+
+            colorList.add(new ColorName("Lightpink", 0xff, 0xb6, 0xc1)); // pastel
+            colorList.add(new ColorName("Lightcoral" , 0xf0, 0x80, 0x80)); //pastel
+            colorList.add(new ColorName("Lightblue" ,0xad, 0xd8, 0xe6)); // pastel
+            colorList.add(new ColorName("lightSalmon" , 0xff, 0xa0, 0x7a)); // pastel
+            colorList.add(new ColorName("Lightyellow" , 0xff, 0xff, 0xe0)); //pastel
+            colorList.add(new ColorName("Lightgreen" , 0x90, 0xee, 0x90)); // pastel
+
+
             Palette p = Palette.from(bitmap).generate();
 
-            /// สีสดปานกลาง
             int VibrantColor = p.getVibrantColor(defaultColor);
             v1 = String.format("#%X", VibrantColor);
             colorv1 = v1;
+            System.out.println("Vi : "+VibrantColor);
+            System.out.println("colorv1 : "+colorv1);
+
+//          System.out.println("ColorList : " + colorList.size());
+//
+            int c1 = Color.parseColor(colorv1);
+            int red1 = Color.red(c1);
+            int green1 = Color.green(c1);
+            int blue1 = Color.blue(c1);
+
+            int mse1,mse2,mse3,mse_correct1;
+            int min1 = Integer.MAX_VALUE;
+
+            String testname1 = "";
+
+            for(int i=0;i<colorList.size();i++){
+
+                mse1 = Math.abs(colorList.get(i).getR()- red1);
+                mse2 = Math.abs(colorList.get(i).getG() - green1);
+                mse3 = Math.abs(colorList.get(i).getB() - blue1);
+
+                mse_correct1 = mse1+mse2+mse3;
+                //System.out.println("1---"+mse1+" 2---"+ mse2+" 3---"+mse3);
+                if(mse_correct1 < min1){
+                    min1 = mse_correct1;
+//                    name = mse_correct;
+                    testname1 = colorList.get(i).getName();
+
+                    //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
+                }
+            }
+            name_color1 = testname1;
+            //System.out.println("C1 : " + c1);
+            System.out.println("test1 :" + testname1);
+
             checkBox1.setBackgroundColor(VibrantColor);
 
             /// สีหม่นออกสว่าง
+
+
+
             int MutedColorLight = p.getLightMutedColor(defaultColor);
             v2 = String.format("#%X", MutedColorLight);
             colorv2 = v2;
+            System.out.println("colorv2 : "+colorv2);
+
+            int c2 = Color.parseColor(colorv2);
+            int red2 = Color.red(c2);
+            int green2 = Color.green(c2);
+            int blue2 = Color.blue(c2);
+
+            int mse4,mse5,mse6,mse_correct2;
+            int min2 = Integer.MAX_VALUE;
+
+            String testname2 = "";
+
+            for(int i=0;i<colorList.size();i++){
+
+                mse4 = Math.abs(colorList.get(i).getR()- red2);
+                mse5 = Math.abs(colorList.get(i).getG() - green2);
+                mse6 = Math.abs(colorList.get(i).getB() - blue2);
+
+                mse_correct2 = mse4+mse5+mse6;
+                //System.out.println("1---"+mse1+" 2---"+ mse2+" 3---"+mse3);
+                if(mse_correct2 < min2){
+                    min2 = mse_correct2;
+//                    name = mse_correct;
+                    testname2 = colorList.get(i).getName();
+
+                    //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
+                }
+            }
+            name_color2 = testname2;
+            //System.out.println("C2 : " + c2);
+            System.out.println("test2 :" + testname2);
+
             checkBox2.setBackgroundColor(MutedColorLight);
 
             /// สีหม่นปานกลาง
@@ -416,14 +624,48 @@ public class Main3Activity extends AppCompatActivity {
 //            checkBox2.setText("VibrantColorDark: " + String.format("#%X", VibrantColorDark));
 //            checkBox2.setBackgroundColor(VibrantColorDark);
 
+            ///
+
             int MutedColorDark = p.getDarkMutedColor(defaultColor);
             v3 = String.format("#%X", MutedColorDark);
-            //textMutedDark.setText("MutedColorDark: " + String.format("#%X", MutedColorDark));
             colorv3 = v3;
+            System.out.println("colorv3 : "+colorv3);
+            int c3 = Color.parseColor(colorv3);
+            int red3 = Color.red(c3);
+            int green3 = Color.green(c3);
+            int blue3 = Color.blue(c3);
+
+            int mse7,mse8,mse9,mse_correct3;
+            int min3 = Integer.MAX_VALUE;
+
+            String testname3 = "";
+
+            for(int i=0;i<colorList.size();i++){
+
+                mse7 = Math.abs(colorList.get(i).getR()- red3);
+                mse8 = Math.abs(colorList.get(i).getG() - green3);
+                mse9 = Math.abs(colorList.get(i).getB() - blue3);
+
+                mse_correct3 = mse7+mse8+mse9;
+                //System.out.println("1---"+mse1+" 2---"+ mse2+" 3---"+mse3);
+                if(mse_correct3 < min3){
+                    min3 = mse_correct3;
+//                    name = mse_correct;
+                    testname3 = colorList.get(i).getName();
+
+                    //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
+                }
+            }
+            name_color3 = testname3;
+            //System.out.println("C3 : " + c3);
+            System.out.println("test3 :" + testname3);
+
+
             checkBox3.setBackgroundColor(MutedColorDark);
-
-
 
         }
 
-    }
+
+
+
+}

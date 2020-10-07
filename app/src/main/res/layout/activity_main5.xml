@@ -4,28 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    tools:context=".Main5Activity">
+    android:background="@drawable/gardient_background"
+    tools:context=".Main5Activity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="MY WARDROBE"
             android:textColor="#fff"
-            android:textSize="57dp"
+            android:textSize="60dp"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
             android:textAlignment="center"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/annie_use_your_telescope"/>
 
         <GridLayout
-            android:layout_width="match_parent"
+            android:layout_width="399dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
             android:columnCount="2"
             android:columnOrderPreserved="false"
@@ -37,8 +41,8 @@
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp">
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -49,7 +53,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
+                        android:src="@drawable/shirtshort">
 
                     </ImageView>
 
@@ -72,7 +76,7 @@
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -84,9 +88,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
-
-                    </ImageView>
+                        android:src="@drawable/longsleeve"></ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -95,7 +97,6 @@
                         android:textColor="#000"
                         android:textSize="20dp"
                         android:textStyle="bold"></TextView>
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -105,7 +106,7 @@
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -117,7 +118,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
+                        android:src="@drawable/shortsleeves">
 
                     </ImageView>
 
@@ -133,13 +134,15 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card4"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -151,9 +154,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
-
-                    </ImageView>
+                        android:src="@drawable/poloshirt"></ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -165,13 +166,15 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card5"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -183,7 +186,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
+                        android:src="@drawable/cardigan">
 
                     </ImageView>
 
@@ -199,13 +202,15 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card6"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -217,7 +222,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
+                        android:src="@drawable/dress">
 
                     </ImageView>
 
@@ -233,13 +238,15 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card7"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -251,14 +258,14 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
+                        android:src="@drawable/trousers">
 
                     </ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="เสื้อยืดแขนสั้น"
+                        android:text="กางเกงขายาว"
                         android:textColor="#000"
                         android:textSize="20dp"
                         android:textStyle="bold">
@@ -267,13 +274,15 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card8"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -285,29 +294,28 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
+                        android:src="@drawable/pants">
 
                     </ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="เสื้อยืดแขนสั้น"
+                        android:text="กางเกงขาสั้น"
                         android:textColor="#000"
                         android:textSize="20dp"
-                        android:textStyle="bold">
-
-                    </TextView>
-
+                        android:textStyle="bold"></TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card9"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -319,22 +327,18 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/clothes">
-
-                    </ImageView>
+                        android:src="@drawable/longskirt"></ImageView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="เสื้อยืดแขนสั้น"
+                        android:text="กระโปรง"
                         android:textColor="#000"
                         android:textSize="20dp"
-                        android:textStyle="bold">
-
-                    </TextView>
-
+                        android:textStyle="bold"></TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card10"
@@ -342,28 +346,31 @@
                 android:layout_height="180dp"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="30dp"
-                app:cardCornerRadius="15dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/clothes">
-                    </ImageView>
+                        android:layout_height="97dp"
+                        android:src="@drawable/jacket"></ImageView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="เสื้อยืดแขนสั้น"
+                        android:text="แจ็คเก็ต"
                         android:textColor="#000"
                         android:textSize="20dp"
-                        android:textStyle="bold">
-                    </TextView>
+                        android:textStyle="bold"></TextView>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+
         </GridLayout>
     </LinearLayout>
 </ScrollView>

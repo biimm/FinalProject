@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:background="@drawable/gardients"
     tools:context=".Main3Activity" >
 
     <RelativeLayout
@@ -13,50 +13,56 @@
 
         <Button
             android:id="@+id/choose_image_btn"
-            android:layout_width="70dp"
-            android:layout_height="45dp"
-            android:layout_alignParentStart="true"
-
-            android:layout_alignParentLeft="true"
+            android:layout_width="91dp"
+            android:layout_height="44dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="268dp"
-            android:layout_marginLeft="268dp"
-            android:layout_marginTop="-3dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginRight="3dp"
-
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             android:layout_toStartOf="@+id/capture_image_btn"
             android:layout_toLeftOf="@+id/capture_image_btn"
-            android:background="@color/colorAccent"
-            android:text="Galley"
+            android:background="#fff1eb"
+            android:text="อัลบั้มภาพ"
             android:textAllCaps="true"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/capture_image_btn"
-            android:layout_width="70dp"
+            android:layout_width="95dp"
             android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-
             android:layout_alignParentRight="true"
             android:layout_marginLeft="340dp"
             android:layout_marginTop="-1dp"
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
-            android:background="@color/colorPrimary"
-            android:text="Camera"
+            android:background="#6a85b6"
+            android:text="กล้องถ่ายรูป"
             android:textAllCaps="true"
-            android:textSize="14sp" />
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/image_view"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:scaleType="centerCrop"
-        />
+        android:layout_height="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#000" />
 
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="328dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_add_a_photo_black_24dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -64,69 +70,102 @@
 
         <CheckBox
             android:id="@+id/checkBox"
-            android:layout_width="400dp"
-            android:layout_height="53dp"
+            android:layout_width="233dp"
+            android:layout_height="49dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="17dp"
-            android:layout_marginRight="17dp" />
-
+            android:layout_marginTop="10dp" />
 
         <CheckBox
             android:id="@+id/checkBox2"
-            android:layout_width="401dp"
-            android:layout_height="50dp"
+            android:layout_width="233dp"
+            android:layout_height="49dp"
             android:layout_below="@+id/checkBox"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp" />
 
         <CheckBox
             android:id="@+id/checkBox3"
-            android:layout_width="402dp"
-            android:layout_height="50dp"
+            android:layout_width="233dp"
+            android:layout_height="49dp"
             android:layout_below="@+id/checkBox2"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp" />
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp" />
 
         <Button
             android:id="@+id/save_button"
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="202dp"
-            android:layout_marginEnd="-1dp"
-            android:layout_marginRight="-1dp"
-            android:layout_marginBottom="94dp"
-            android:text="ADD"
+            android:layout_marginStart="65dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="223dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:background="@drawable/round_bg"
+            android:gravity="center"
+            android:text="ถัดไป"
+            android:textColor="#fff"
             android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edit1"
+            android:layout_width="75dp"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/edit_bg"
+            android:text="เปลี่ยนสี"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edit2"
+            android:layout_width="75dp"
+            android:layout_height="33dp"
+            android:layout_below="@+id/edit1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/edit_bg"
+            android:text="เปลี่ยนสี"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/edit3"
+            android:layout_width="75dp"
+            android:layout_height="33dp"
+            android:layout_below="@+id/edit2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/edit_bg"
+            android:text="เปลี่ยนสี"
+            android:textColor="#fff"
             android:textStyle="bold" />
 
 

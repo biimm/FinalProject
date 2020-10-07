@@ -1,8 +1,5 @@
 package com.example.myapplication;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,33 +7,30 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myapplication.connectDB.ClothesStatus;
-import com.example.myapplication.connectDB.ClothesTypeinterface;
 import com.example.myapplication.connectDB.Clothesmain;
-import com.example.myapplication.connectDB.Clothesmaininterface;
 import com.example.myapplication.connectDB.ColorClothes;
 
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH1;
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH2;
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH3;
+import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_TONE;
 import static com.example.myapplication.connectDB.Clothesmaininterface.DATE_CLOTH;
 import static com.example.myapplication.connectDB.Clothesmaininterface.PIC_CLOTH;
 import static com.example.myapplication.connectDB.Clothesmaininterface.STATUS_CLOTH;
@@ -53,6 +47,7 @@ public class Main4Activity extends AppCompatActivity {
 
     Clothesmain clothesmain;
     ColorClothes colorclothes;
+    ColorTone colorTone;
 
     String datatype , datastatus;
 
@@ -62,6 +57,7 @@ public class Main4Activity extends AppCompatActivity {
     String V01 = "#0";
     String V02 = "#0";
     String V03 = "#0";
+    String tone = "";
 
     String formattedDate = "";
 
@@ -86,15 +82,17 @@ public class Main4Activity extends AppCompatActivity {
         clothesmain = new Clothesmain(getApplicationContext());
         colorclothes = new ColorClothes(getApplicationContext());
 
-        /////// get image from Mainactivity
-
+        /////// get image from Main3activity
         testimg1 = getIntent().getExtras().getString("image");
         final Uri image_uri = Uri.parse(testimg1);
         mImageView.setImageURI(image_uri);
         testimg = imageViewToByte(mImageView);
 
 
-        ////// get check
+
+        tone = getIntent().getStringExtra("colorname");
+
+        ////// get check color
         Intent bundle = getIntent();
         V01 = bundle.getStringExtra("color1");
         if (V01.equals("#0") ) {
@@ -147,7 +145,7 @@ public class Main4Activity extends AppCompatActivity {
         });
 
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         formattedDate = df.format(c.getTime()).toString();
         edtdate.setText(formattedDate);
 
@@ -171,6 +169,7 @@ public class Main4Activity extends AppCompatActivity {
                 else {
                     saveClothes();
                     saveColor();
+                    Toast.makeText(getApplicationContext() , "เพิ่มข้อมูลสำเร็จ" , Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Main4Activity.this, Main2Activity.class);
                     startActivity(intent);
                 }
@@ -186,6 +185,7 @@ public class Main4Activity extends AppCompatActivity {
         return byteArray;
     }
 
+
     public void saveClothes(){
 
         /// add to Clothesmain
@@ -198,6 +198,7 @@ public class Main4Activity extends AppCompatActivity {
         adddbclothesmain.put(COLOR_CLOTH1 , V01);
         adddbclothesmain.put(COLOR_CLOTH2 , V02);
         adddbclothesmain.put(COLOR_CLOTH3 , V03);
+        adddbclothesmain.put(COLOR_TONE , tone);
         dbclothesmain.insertOrThrow(TABLE_NAME1,null,adddbclothesmain);
     }
 
@@ -209,7 +210,15 @@ public class Main4Activity extends AppCompatActivity {
         addcolor.put(COLOR_CLOTH1 , V01);
         addcolor.put(COLOR_CLOTH2 , V02);
         addcolor.put(COLOR_CLOTH3 , V03);
+        addcolor.put(COLOR_TONE , tone);
         dbcclothcolor.insertOrThrow(TABLE_NAME5 , null , addcolor);
     }
+
+
+
+
+
+
+
 
 }

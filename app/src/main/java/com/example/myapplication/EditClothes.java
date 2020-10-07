@@ -1,10 +1,6 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -21,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.connectDB.Clothesmain;
 
-import java.util.Calendar;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class EditClothes extends AppCompatActivity {
 
@@ -79,7 +74,7 @@ public class EditClothes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                mcloth.updatestatus(idedit,imageedit,typeedit,dateedit,datastatus,color1edit,color2edit,color3edit);
+                mcloth.update(idedit,imageedit,typeedit,dateedit,datastatus,color1edit,color2edit,color3edit);
 
                 Toast.makeText(getApplicationContext(),"อัพเดทสำเร็จ",Toast.LENGTH_SHORT).show();
 

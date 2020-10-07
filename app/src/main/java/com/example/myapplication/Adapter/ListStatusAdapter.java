@@ -1,58 +1,55 @@
-package com.example.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.myapplication.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.GridView;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
+import com.example.myapplication.showlist.UseStatus;
 import com.example.myapplication.connectDB.Clothesmain;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class ListStatusAdapter extends BaseAdapter {
     ImageView mimage;
-    CheckBox mShowCheckbox;
+    Button basketcloth;
 
     Context mContext;
-    ArrayList<String> id;
+    ArrayList<String> id_cloth;
     ArrayList<String> pic_cloth;
+    ArrayList<String> status_cloth;
 
     Clothesmain clothesmain;
 
-    public ListStatusAdapter(Context applicationContext,ArrayList<String> id,ArrayList<String> pic_cloth) {
+    public ListStatusAdapter(Context applicationContext,ArrayList<String> id,ArrayList<String> pic_cloth,ArrayList<String>status_cloth) {
 
-        this.id = new ArrayList<>();
+        this.id_cloth = new ArrayList<>();
         this.pic_cloth = new ArrayList<>();
+        this.status_cloth = new ArrayList<>();
 
         mContext = applicationContext;
-        this.id = id;
+        this.id_cloth = id;
         this.pic_cloth = pic_cloth;
+        this.status_cloth = status_cloth;
 
         clothesmain = new Clothesmain(mContext);
     }
 
     @Override
     public int getCount() {
-        return id.size();
+        return id_cloth.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return id.get(position);
+        return id_cloth.get(position);
     }
 
     @Override
@@ -67,10 +64,26 @@ public class ListStatusAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.activity_list_status_adapter,parent,false);
         }
 
-        mShowCheckbox = convertView.findViewById(R.id.checkbox);
-
         mimage = convertView.findViewById(R.id.mimage);
 
+        basketcloth = convertView.findViewById(R.id.basketcloth);
+
+        basketcloth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("click");
+
+                //update status
+                clothesmain.updatestatus(String.valueOf(id_cloth.get(position)) , "อยู่ในตะกร้าผ้า");
+                Toast.makeText(mContext,"เก็บลงตะกร้าแล้ว" ,Toast.LENGTH_SHORT).show();
+
+                //refresh page
+                Intent intent = new Intent(mContext, UseStatus.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                mContext.startActivity(intent);
+
+            }
+        });
 
         final Uri image_uri = Uri.parse(pic_cloth.get(position).toString());
         mimage.setImageURI(image_uri);

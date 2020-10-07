@@ -1,37 +1,36 @@
-package com.example.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.myapplication.showlist;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.GridView;
 
+import com.example.myapplication.Adapter.ListStatusAdapter;
+import com.example.myapplication.R;
 import com.example.myapplication.connectDB.Clothesmain;
+import com.example.myapplication.function_status;
 
 import java.util.ArrayList;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import static com.example.myapplication.connectDB.Clothesmaininterface.TABLE_NAME1;
 
-public class WashStatus extends AppCompatActivity {
+public class UseStatus extends AppCompatActivity {
 
     GridView gridviewcloth;
-    Button checkall , cancelcheck , washing;
     Clothesmain clothesmain;
+
 
     ArrayList<String> id;
     ArrayList<String> pic_cloth;
+    ArrayList<String> status_cloth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wash_status);
-
-        checkall = findViewById(R.id.checkAll);
-        cancelcheck = findViewById(R.id.cancelcheck);
-        washing = findViewById(R.id.wardrobecloth);
+        setContentView(R.layout.activity_manage_status);
 
         gridviewcloth = findViewById(R.id.gridview_status);
 
@@ -39,17 +38,19 @@ public class WashStatus extends AppCompatActivity {
 
         id = new ArrayList<>();
         pic_cloth = new ArrayList<>();
+        status_cloth = new ArrayList<>();
+
 
         showlistfromdb();
 
-        final ListStatusAdapter listStatusAdapter = new ListStatusAdapter(WashStatus.this,id,pic_cloth);
+        final ListStatusAdapter listStatusAdapter = new ListStatusAdapter(UseStatus.this,id,pic_cloth,status_cloth);
 
         gridviewcloth.setAdapter(listStatusAdapter);
     }
 
     private void showlistfromdb() {
         SQLiteDatabase db = clothesmain.getWritableDatabase();
-        Cursor resdbcloth = db.rawQuery("select * from " + TABLE_NAME1+" where statuscloth = "+ '"' +"ส่งซักรีด"+ '"',null);
+        Cursor resdbcloth = db.rawQuery("select * from " + TABLE_NAME1+" where statuscloth = "+ '"' +"กำลังใช้งาน"+ '"',null);
 
         int countresdbcloth = resdbcloth.getCount();
 
@@ -67,7 +68,7 @@ public class WashStatus extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         this.finish();
-        Intent in = new Intent(this,function_status.class);
+        Intent in = new Intent(this, function_status.class);
         startActivity(in);
         overridePendingTransition(0,0);
         in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

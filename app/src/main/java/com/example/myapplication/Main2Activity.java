@@ -2,17 +2,12 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.myapplication.showlist.MatchCloth;
 
 public class Main2Activity extends AppCompatActivity {
     CardView cardView1,cardView2,cardView3,cardView4;
@@ -55,7 +50,7 @@ public class Main2Activity extends AppCompatActivity {
         cardView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main2Activity.this,MatchCloth.class);
+                Intent intent = new Intent(Main2Activity.this, MatchCloth.class);
                 startActivity(intent);
 
             }

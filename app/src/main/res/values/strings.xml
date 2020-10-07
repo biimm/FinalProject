@@ -6,17 +6,36 @@
         <item>เสื้อยืดแขนยาว</item>
         <item>เสื้อเชิ้ตแขนสั้น</item>
         <item>เสื้อเชิ้ตแขนยาว</item>
-        <item>เสื้อกันหนาว</item>
-        <item>เกางเกงขายาว</item>
+        <item>เสื้อไหมพรม</item>
+        <item>ชุดเดรส</item>
+        <item>กางเกงขายาว</item>
         <item>กางเกงขาสั้น</item>
         <item>กระโปรง</item>
+        <item>แจ็คเก็ต</item>
     </string-array>
     <string-array name="Spinner_Status">
         <item>โปรดเลือกสถานะเสื้อผ้า</item>
-        <item>ยังไม่ได้ใช้งาน</item>
+        <item>พร้อมใช้งาน</item>
         <item>กำลังใช้งาน</item>
         <item>อยู่ในตะกร้าผ้า</item>
         <item>ส่งซักรีด</item>
     </string-array>
+
+    <string-array name="Spinner_Color">
+        <item>โปรดเลือกสีเสื้อผ้า</item>
+        <item>ขาว-ดำ</item>
+        <item>โทนร้อน</item>
+        <item>โทนเย็น</item>
+        <item>เอิร์ธโทน</item>
+        <item>พาสเทล</item>
+    </string-array>
+
+    <string name="vibrant">Vibrant</string>
+    <string name="vibrant_light">Vibrant Light</string>
+    <string name="vibrant_dark">Vibrant Dark</string>
+    <string name="muted">Muted</string>
+    <string name="muted_light">Muted Light</string>
+    <string name="muted_dark">Muted Dark</string>
+
 
 </resources>

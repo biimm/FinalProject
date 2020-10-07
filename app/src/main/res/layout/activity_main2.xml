@@ -4,29 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#fff"
     tools:context=".Main2Activity">
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/gardient_background" />
 
     <TextView
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="92dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:fontFamily="@font/annie_use_your_telescope"
+        android:gravity="center_horizontal"
         android:text="MY WARDROBE"
-        android:textColor="#fff"
-        android:textSize="55dp"
-        android:textStyle="bold"
         android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:textColor="#fff"
+        android:textSize="65dp"
+        android:textStyle="bold" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -46,11 +53,12 @@
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp"
+            >
 
             <LinearLayout
-                android:layout_width="130dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
@@ -68,9 +76,9 @@
                     android:text="เพิ่มเสื้อผ้า"
                     android:layout_marginTop="20dp"
                     android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -84,12 +92,12 @@
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp">
 
             <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="150dp"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -102,11 +110,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:gravity="center_horizontal"
                     android:text="เสื้อผ้าทั้งหมด"
-                    android:layout_marginTop="20dp"
                     android:textAlignment="center"
-                    android:textSize="20dp"
+                    android:textSize="22dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -122,11 +130,11 @@
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp">
 
             <LinearLayout
-                android:layout_width="130dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
@@ -141,10 +149,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="สถานะเสื้อผ้า"
+                    android:text="จัดการเสื้อผ้า"
                     android:layout_marginTop="20dp"
                     android:textAlignment="center"
-                    android:textSize="20dp"
+                    android:textSize="22dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -160,11 +168,11 @@
             android:layout_columnWeight="1"
             android:layout_gravity="center_vertical"
             android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp">
 
             <LinearLayout
-                android:layout_width="130dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
@@ -182,7 +190,7 @@
                     android:text="แมทช์เสื้อผ้า"
                     android:layout_marginTop="20dp"
                     android:textAlignment="center"
-                    android:textSize="20dp"
+                    android:textSize="22dp"
                     android:textStyle="bold" />
 
             </LinearLayout>

@@ -7,11 +7,9 @@ import android.provider.BaseColumns;
 
 import androidx.annotation.Nullable;
 
-
-import static com.example.myapplication.connectDB.ClothesWashinterface.TABLE_NAME4;
-import static com.example.myapplication.connectDB.ClothesWashinterface.WASH_BACK;
-import static com.example.myapplication.connectDB.ClothesWashinterface.WASH_SENT;
 import static com.example.myapplication.connectDB.ClothesWashinterface.PIC_CLOTH;
+import static com.example.myapplication.connectDB.ClothesWashinterface.TABLE_NAME4;
+import static com.example.myapplication.connectDB.ClothesWashinterface.WASH_SENT;
 
 
 public class ClothesWash extends SQLiteOpenHelper {
@@ -24,11 +22,15 @@ public class ClothesWash extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME4 + " (" + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + PIC_CLOTH + " TEXT NOT NULL, " + WASH_SENT + " TEXT NOT NULL, " + WASH_BACK + " TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME4 + " (" +
+                BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + PIC_CLOTH + " BLOB NOT NULL,"
+                + WASH_SENT + " TEXT NOT NULL);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
 }

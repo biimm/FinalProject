@@ -6,4 +6,5 @@ public interface ColorClothesinterface {
     public String COLOR_CLOTH1 = "colorcloth1";
     public String COLOR_CLOTH2 = "colorcloth2";
     public String COLOR_CLOTH3 = "colorcloth3";
+    public String COLOR_TONE = "colortone";
 }

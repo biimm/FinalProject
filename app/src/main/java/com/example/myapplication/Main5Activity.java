@@ -1,12 +1,13 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
+
+import com.example.myapplication.showlist.Listclothes;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class Main5Activity extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class Main5Activity extends AppCompatActivity {
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(Main5Activity.this,Listclothes.class);
+               Intent intent = new Intent(Main5Activity.this, Listclothes.class);
                intent.putExtra("name_type","เสื้อยืดแขนสั้น");
                startActivity(intent);
                 //Toast.makeText(getApplicationContext(),"select card1",Toast.LENGTH_SHORT).show();
@@ -122,7 +123,7 @@ public class Main5Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Main5Activity.this,Listclothes.class);
-                intent.putExtra("name_type","ชุดกีฬา");
+                intent.putExtra("name_type","แจ็คเก็ต");
                 startActivity(intent);
                 //Toast.makeText(getApplicationContext(),"select card10",Toast.LENGTH_SHORT).show();
             }
