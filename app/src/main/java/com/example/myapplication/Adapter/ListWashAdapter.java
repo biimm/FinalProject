@@ -2,7 +2,6 @@ package com.example.myapplication.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +9,14 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.connectDB.ClothesWash;
 import com.example.myapplication.connectDB.Clothesmain;
-import com.example.myapplication.showlist.WashStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,6 +25,12 @@ import java.util.Calendar;
 public class ListWashAdapter extends BaseAdapter {
     ImageView mimage;
     Button wardrobe;
+
+    CheckBox[] mChecked;
+    CheckBox cBox;
+
+    public String id_choose = "";
+    public int position_choose = 0;
 
     Context mContext;
     ArrayList<String> id_cloth;
@@ -40,6 +45,8 @@ public class ListWashAdapter extends BaseAdapter {
     ClothesWash clothesWash;
     String formattedDate = "";
 
+    public ArrayList<String> position_test;
+
 
 
     public ListWashAdapter(Context applicationContext, ArrayList<String> id, ArrayList<String> pic_cloth,ArrayList<String>date_wash) {
@@ -47,6 +54,7 @@ public class ListWashAdapter extends BaseAdapter {
         this.pic_cloth = new ArrayList<>();
         //this.status_cloth = new ArrayList<>();
         this.date_wash = new ArrayList<>();
+        this.position_test = new ArrayList<>();
 
         mContext = applicationContext;
         this.id_cloth = id;
@@ -56,6 +64,11 @@ public class ListWashAdapter extends BaseAdapter {
 
         clothesmain = new Clothesmain(mContext);
         clothesWash = new ClothesWash(mContext);
+
+        //for test
+        for(int i=0;i<id.size();++i){
+            position_test.add(i,"null");
+        }
     }
 
     @Override
@@ -121,22 +134,63 @@ public class ListWashAdapter extends BaseAdapter {
             }
         });
 
-        wardrobe = convertView.findViewById(R.id.wardrobecloth);
-        wardrobe.setOnClickListener(new View.OnClickListener() {
+
+        cBox = (CheckBox) convertView.findViewById(R.id.checkBox6);
+        cBox.setTag(Integer.valueOf(position)); // set the tag so we can identify the correct row in the listener
+
+        if(cBox.isChecked()){
+            System.out.println("CHECK "+position);
+        }else{
+            System.out.println("NOT CHECK "+position);
+        }
+
+        //System.out.println("MCHECK "+ mChecked[position].isChecked());
+        //cBox.setChecked(mChecked[position].isChecked()); // set the status as we stored it
+        System.out.println(Integer.valueOf(position));
+        //cBox.setOnCheckedChangeListener(mListener); // set the listener
+
+        cBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                System.out.println("click");
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.isChecked()){
+                    System.out.println("Check correct : "+position);
+                    position_choose = position;
+                    position_test.set(position,id_cloth.get(position));
 
-                //update status
-                clothesmain.updatestatus(String.valueOf(id_cloth.get(position)), "พร้อมใช้งาน");
-                Toast.makeText(mContext,"เก็บเข้าตู้เสื้อผ้าแล้ว: "+formattedDate ,Toast.LENGTH_SHORT).show();
+                    for(int i=0;i<position_test.size();++i){
+                        System.out.println("[POSITION_TEST] "+i+": "+position_test.get(i));
+                    }
 
-                //refresh page
-                Intent intent = new Intent(mContext, WashStatus.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                mContext.startActivity(intent);
+                }else{
+                    System.out.println("Check not correct : "+position);
+
+                    position_test.set(position,"null");
+
+                    for(int i=0;i<position_test.size();++i){
+                        System.out.println("[POSITION_TEST] "+i+": "+position_test.get(i));
+                    }
+
+
+                }
             }
         });
+
+//        wardrobe = convertView.findViewById(R.id.wardrobecloth);
+//        wardrobe.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("click");
+//
+//                //update status
+//                clothesmain.updatestatus(String.valueOf(id_cloth.get(position)), "พร้อมใช้งาน");
+//                Toast.makeText(mContext,"เก็บเข้าตู้เสื้อผ้าแล้ว: "+formattedDate ,Toast.LENGTH_SHORT).show();
+//
+//                //refresh page
+//                Intent intent = new Intent(mContext, WashStatus.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                mContext.startActivity(intent);
+//            }
+//        });
 
         return convertView;
     }

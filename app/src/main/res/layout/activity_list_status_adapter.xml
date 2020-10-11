@@ -3,68 +3,36 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    >
 
 
-    <LinearLayout
-        android:layout_width="202dp"
-        android:layout_height="235dp"
-        android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="199dp"
+        android:layout_height="215dp">
 
-        <RelativeLayout
-            android:layout_width="197dp"
-            android:layout_height="232dp">
+        <ImageView
+            android:id="@+id/mimage"
+            android:layout_width="142dp"
+            android:layout_height="177dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp" />
 
-            <ImageView
-                android:id="@+id/mimage"
-                android:layout_width="169dp"
-                android:layout_height="180dp"
-                android:layout_below="@+id/checkbox"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="13dp"
-                android:layout_marginRight="13dp" />
-
-
-            <Button
-                android:id="@+id/basketcloth"
-                android:layout_width="31dp"
-                android:layout_height="34dp"
-                android:layout_below="@+id/checkbox"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="84dp"
-                android:layout_marginLeft="84dp"
-                android:layout_marginTop="193dp"
-                android:layout_marginEnd="82dp"
-                android:layout_marginRight="82dp"
-                android:background="@drawable/laundry" />
-
-            <ImageView
-                android:layout_width="135dp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/mimage"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="31dp"
-                android:layout_marginLeft="31dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="31dp"
-                android:layout_marginRight="31dp"
-                android:background="#80d0c7" />
-        </RelativeLayout>
-
-    </LinearLayout>
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="86dp" />
+    </RelativeLayout>
 
 
 

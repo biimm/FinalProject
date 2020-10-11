@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.myapplication.connectDB.Clothesmain;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class EditClothes extends AppCompatActivity {
 
@@ -48,6 +49,11 @@ public class EditClothes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_clothes);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mimage = findViewById(R.id.image_edit);
         edttype = findViewById(R.id.edttype);

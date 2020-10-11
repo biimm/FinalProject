@@ -5,11 +5,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gardients"
-    tools:context=".Main3Activity" >
+    tools:context=".SearchClothesfromcam" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="47dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:background="#ace0f9" />
 
         <Button
             android:id="@+id/choose_image_btn"
@@ -44,12 +56,6 @@
             android:textColor="#fff"
             android:textSize="14sp"
             android:textStyle="bold" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="47dp"
-            android:layout_height="44dp"
-            android:background="#ace0f9" />
 
 
     </RelativeLayout>

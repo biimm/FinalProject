@@ -22,6 +22,7 @@ import com.example.myapplication.connectDB.Clothesmain;
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import static com.example.myapplication.connectDB.Clothesmaininterface.TABLE_NAME1;
 
@@ -56,9 +57,13 @@ public class MatchCloth extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_cloth);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         spcolor = (Spinner) findViewById(R.id.spcolor);
         sptype1 = (Spinner) findViewById(R.id.sptype1);
-        sptype2 = (Spinner) findViewById(R.id.sptype2);
         search = (Button) findViewById(R.id.search_btn);
         match = (Button) findViewById(R.id.match_btn);
         checkBox = findViewById(R.id.checkBox6);
@@ -105,7 +110,7 @@ public class MatchCloth extends AppCompatActivity {
                 intent.putExtra("toneclothselect" , tone.get(listSearchAdapter.position_choose));
 
                 //intent.putExtra("colorsearch" , datacolor);
-                intent.putExtra("typesearch" , datatype2);
+                //intent.putExtra("typesearch" , datatype2);
 
                 intent.putExtra("typeselect" , datatype1);
 
@@ -148,21 +153,21 @@ public class MatchCloth extends AppCompatActivity {
         });
 
 
-        ArrayAdapter<CharSequence> adaptertype2 = ArrayAdapter.createFromResource(this, R.array.Spinner_type, android.R.layout.simple_spinner_item);
-        adaptertype2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sptype2.setAdapter(adaptertype2);
-        sptype2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                datatype2 = (String) parent.getItemAtPosition(position);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        ArrayAdapter<CharSequence> adaptertype2 = ArrayAdapter.createFromResource(this, R.array.Spinner_type, android.R.layout.simple_spinner_item);
+//        adaptertype2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        sptype2.setAdapter(adaptertype2);
+//        sptype2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                datatype2 = (String) parent.getItemAtPosition(position);
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
 
 
     }

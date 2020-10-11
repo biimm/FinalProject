@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.myapplication.Adapter.ListStatusAdapter;
 import com.example.myapplication.R;
@@ -14,6 +17,7 @@ import com.example.myapplication.function_status;
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import static com.example.myapplication.connectDB.Clothesmaininterface.TABLE_NAME1;
 
@@ -22,6 +26,7 @@ public class UseStatus extends AppCompatActivity {
     GridView gridviewcloth;
     Clothesmain clothesmain;
 
+    Button sendbasket;
 
     ArrayList<String> id;
     ArrayList<String> pic_cloth;
@@ -31,6 +36,14 @@ public class UseStatus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_status);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        sendbasket = (Button) findViewById(R.id.washcloth);
+
 
         gridviewcloth = findViewById(R.id.gridview_status);
 
@@ -46,6 +59,29 @@ public class UseStatus extends AppCompatActivity {
         final ListStatusAdapter listStatusAdapter = new ListStatusAdapter(UseStatus.this,id,pic_cloth,status_cloth);
 
         gridviewcloth.setAdapter(listStatusAdapter);
+
+
+        sendbasket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(UseStatus.this , UseStatus.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+
+                for(int i=0;i<listStatusAdapter.position_test.size();++i){
+
+                    if(!listStatusAdapter.position_test.get(i).equals("null")){
+                        clothesmain.updatestatus(listStatusAdapter.position_test.get(i), "อยู่ในตะกร้าผ้า");
+                    }
+
+
+                }
+
+                Toast.makeText(UseStatus.this , "อยู่ในตะกร้าผ้า" , Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     private void showlistfromdb() {

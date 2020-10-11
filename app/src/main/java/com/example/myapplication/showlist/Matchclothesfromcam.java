@@ -9,9 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.example.myapplication.Adapter.ListShowResult;
+import com.example.myapplication.Adapter.ListShowresultfromcam;
 import com.example.myapplication.Main2Activity;
 import com.example.myapplication.R;
 import com.example.myapplication.connectDB.Clothesmain;
@@ -23,10 +22,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import static com.example.myapplication.connectDB.Clothesmaininterface.TABLE_NAME1;
 
-public class ResultMatchClothes extends AppCompatActivity {
+public class Matchclothesfromcam extends AppCompatActivity {
 
-    ImageView mImageView ;
-    Button use;
+    ImageView mImageView;
+    Button ok;
     GridView gridView;
 
 
@@ -42,29 +41,28 @@ public class ResultMatchClothes extends AppCompatActivity {
     ArrayList<String> tone;
 
 
-    String tonecloth_getmatch = "";
-    String clothselect_getmatch = "";
-    //String typecloth_getmatch = "";
-    String piccloth_getmatch = "";
+    String tonecloth_getsc = "";
+    String piccloth_getsc = "";
+    String typecloth_getsc = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result_match_clothes);
+        setContentView(R.layout.matchclothfromcam);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mImageView=  findViewById(R.id.image_select);
-        use =  findViewById(R.id.use_btn);
+
+        mImageView = findViewById(R.id.image_select);
+        ok = findViewById(R.id.use_btn);
         gridView = findViewById(R.id.gridview_result);
 
-        tonecloth_getmatch = getIntent().getStringExtra("toneclothselect");
-        clothselect_getmatch = getIntent().getStringExtra("typeselect");
-        //typecloth_getmatch = getIntent().getStringExtra("typesearch");
-
-        piccloth_getmatch = getIntent().getStringExtra("picselect");
+        tonecloth_getsc = getIntent().getStringExtra("colorTone");
+        piccloth_getsc = getIntent().getStringExtra("pictofind");
+        typecloth_getsc = getIntent().getStringExtra("typecloth");
 
 
         id = new ArrayList<>();
@@ -79,37 +77,31 @@ public class ResultMatchClothes extends AppCompatActivity {
         clothesmain = new Clothesmain(this);
 
 
-        final Uri image_uri = Uri.parse(piccloth_getmatch);
+        final Uri image_uri = Uri.parse(piccloth_getsc);
         mImageView.setImageURI(image_uri);
 
 
-        System.out.println("Tone from Match :"+tonecloth_getmatch);
-        //System.out.println("Type from Match :"+typecloth_getmatch);
-        System.out.println("Type Search from Match :"+clothselect_getmatch);
+        System.out.println("Tone from sc :" + tonecloth_getsc);
+        System.out.println("Type from sc :" + typecloth_getsc);
 
+        showdatabase();
 
-        showcloth();
-        final ListShowResult listShowResult = new ListShowResult(getApplicationContext(),id,pic_cloth,type_cloth,status_cloth,color1,color2,color3,tone);
-        gridView.setAdapter(listShowResult);
+        final ListShowresultfromcam listShowresultfromcam = new ListShowresultfromcam(getApplicationContext(), id, pic_cloth, type_cloth, status_cloth, color1, color2, color3, tone);
+        gridView.setAdapter(listShowresultfromcam);
 
-        use.setOnClickListener(new View.OnClickListener() {
+        ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clothesmain.updatestatus(String.valueOf(id.get(listShowResult.position_choose)) , "กำลังใช้งาน");
-
-                Toast.makeText(getApplicationContext(),"กำลังใช้งาน" ,Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                Intent intent = new Intent(Matchclothesfromcam.this , Main2Activity.class);
                 startActivity(intent);
             }
         });
-
     }
 
-    public void showcloth(){
-        if(tonecloth_getmatch.equals("Black") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+    public void showdatabase(){
+
+        if(tonecloth_getsc.equals("Black") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db1 = clothesmain.getWritableDatabase();
             Cursor cursor1 = db1.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -141,9 +133,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("White") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("White") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db2 = clothesmain.getWritableDatabase();
             Cursor cursor2 = db2.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -182,9 +173,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Gray") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Gray") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น")
+                || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม") || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db3 = clothesmain.getWritableDatabase();
             Cursor cursor3 = db3.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -214,9 +204,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Navy") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Navy") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db4 = clothesmain.getWritableDatabase();
             Cursor cursor4 = db4.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -250,9 +239,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Red") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Red") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db5 = clothesmain.getWritableDatabase();
             Cursor cursor5 = db5.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -288,9 +276,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Orange") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Orange") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db6 = clothesmain.getWritableDatabase();
             Cursor cursor6 = db6.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -320,9 +307,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Yellow") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Yellow") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db7 = clothesmain.getWritableDatabase();
             Cursor cursor7 = db7.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -352,9 +338,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Green") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Green") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db8 = clothesmain.getWritableDatabase();
             Cursor cursor8 = db8.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -387,9 +372,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Blue") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Blue") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db9 = clothesmain.getWritableDatabase();
             Cursor cursor9 = db9.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -421,9 +405,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Purple") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Purple") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db10 = clothesmain.getWritableDatabase();
             Cursor cursor10 = db10.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -454,9 +437,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Brown") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Brown") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db11 = clothesmain.getWritableDatabase();
             Cursor cursor11 = db11.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -485,9 +467,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Beige") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Beige") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db12 = clothesmain.getWritableDatabase();
             Cursor cursor12 = db12.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -517,9 +498,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Tan") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Tan") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db13 = clothesmain.getWritableDatabase();
             Cursor cursor13 = db13.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -547,9 +527,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Watercress") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Watercress") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db14 = clothesmain.getWritableDatabase();
             Cursor cursor14 = db14.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -577,9 +556,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightpink") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Lightpink") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db16 = clothesmain.getWritableDatabase();
             Cursor cursor16 = db16.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -607,9 +585,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightcoral") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Lightcoral") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db17 = clothesmain.getWritableDatabase();
             Cursor cursor17 = db17.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -638,9 +615,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightblue") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Lightblue") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db18 = clothesmain.getWritableDatabase();
             Cursor cursor18 = db18.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -671,9 +647,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("LightSalmon") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("LightSalmon") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db19 = clothesmain.getWritableDatabase();
             Cursor cursor19 = db19.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -703,9 +678,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightyellow") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Lightyellow") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db20 = clothesmain.getWritableDatabase();
             Cursor cursor20 = db20.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -738,9 +712,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightgreen") && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
-                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
-                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+        if(tonecloth_getsc.equals("Lightgreen") && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
             SQLiteDatabase db21 = clothesmain.getWritableDatabase();
             Cursor cursor21 = db21.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -770,8 +743,9 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Black") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Black") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
+
             SQLiteDatabase db22 = clothesmain.getWritableDatabase();
             Cursor c22 = db22.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -806,8 +780,9 @@ public class ResultMatchClothes extends AppCompatActivity {
 
         }
 
-        if(tonecloth_getmatch.equals("White") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("White") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
+
             SQLiteDatabase db23 = clothesmain.getWritableDatabase();
             Cursor c23 = db23.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -848,17 +823,17 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Gray") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Gray")&& (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db24 = clothesmain.getWritableDatabase();
             Cursor c24 = db24.rawQuery(
                     " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
-                            + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
-                            + " or typecloth = " + '"' + "เสื้อยืดแขนยาว" + '"'
-                            + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
-                            + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
-                            + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                            + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อยืดแขนยาว" + '"'
+                    + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
+                    + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
+                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
                             + " and " + "(colortone = " + '"' + "BLACK" + '"'
                             + " or colortone = " + '"' + "White" + '"'
                             + " or colortone = " + '"' + "Gray" + '"'
@@ -882,8 +857,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Navy") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Navy") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db25 = clothesmain.getWritableDatabase();
             Cursor c25 = db25.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -919,8 +894,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Red") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Red") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db26 = clothesmain.getWritableDatabase();
             Cursor c26 = db26.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -959,8 +934,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Orange") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Orange") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db27 = clothesmain.getWritableDatabase();
             Cursor c27 = db27.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -992,8 +967,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Yellow") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Yellow")&& (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db28 = clothesmain.getWritableDatabase();
             Cursor c28 = db28.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1025,8 +1000,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Green") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Green") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db29 = clothesmain.getWritableDatabase();
             Cursor c29 = db29.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1061,8 +1036,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Green") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Green") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db30 = clothesmain.getWritableDatabase();
             Cursor c30 = db30.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1095,8 +1070,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Blue") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Blue") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db31 = clothesmain.getWritableDatabase();
             Cursor c31 = db31.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1130,8 +1105,9 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Purple") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Purple") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
+
             SQLiteDatabase db32 = clothesmain.getWritableDatabase();
             Cursor c32 = db32.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1164,8 +1140,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Brown") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Brown") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db33 = clothesmain.getWritableDatabase();
             Cursor c33 = db33.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1197,8 +1173,8 @@ public class ResultMatchClothes extends AppCompatActivity {
 
         }
 
-        if(tonecloth_getmatch.equals("Beige") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Beige") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db34 = clothesmain.getWritableDatabase();
             Cursor c34 = db34.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1230,8 +1206,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Tan") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Tan") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db35 = clothesmain.getWritableDatabase();
             Cursor c35 = db35.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1261,8 +1237,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Watercress") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Watercress") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db37 = clothesmain.getWritableDatabase();
             Cursor c37 = db37.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1292,8 +1268,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightpink") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Lightpink") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
 
             SQLiteDatabase db38 = clothesmain.getWritableDatabase();
             Cursor c38 = db38.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
@@ -1324,8 +1300,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightcoral") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Lightcoral") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db39 = clothesmain.getWritableDatabase();
             Cursor c39 = db39.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1356,8 +1332,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightblue") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Lightblue") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db40 = clothesmain.getWritableDatabase();
             Cursor c40 = db40.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1390,8 +1366,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("LightSalmon") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("LightSalmon") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db41 = clothesmain.getWritableDatabase();
             Cursor c41 = db41.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1423,8 +1399,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightyellow") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Lightyellow") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db42 = clothesmain.getWritableDatabase();
             Cursor c42 = db42.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1459,8 +1435,8 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
-        if(tonecloth_getmatch.equals("Lightgreen") && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
-                || clothselect_getmatch.equals("กระโปรง"))){
+        if(tonecloth_getsc.equals("Lightgreen") && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
             SQLiteDatabase db43 = clothesmain.getWritableDatabase();
             Cursor c43 = db43.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
@@ -1493,13 +1469,4 @@ public class ResultMatchClothes extends AppCompatActivity {
         }
     }
 
-    public void onBackPressed() {
-        super.onBackPressed();
-        this.finish();
-        Intent in = new Intent(this, MatchCloth.class);
-        startActivity(in);
-        overridePendingTransition(0,0);
-        in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        // moveTaskToBack(true);
-    }
 }

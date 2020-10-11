@@ -27,8 +27,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.palette.graphics.Palette;
 
+public class SearchClothesfromcam extends AppCompatActivity {
 
-public class Main3Activity extends AppCompatActivity {
     private static final int RQS_OPEN_IMAGE = 1;
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
@@ -79,11 +79,12 @@ public class Main3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.takepictofind);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mImageView = findViewById(R.id.image_view);
         mCapture = findViewById(R.id.capture_image_btn);
@@ -158,11 +159,11 @@ public class Main3Activity extends AppCompatActivity {
         });
 
 
-        final ArrayList<ColorName> colorList = new ArrayList<ColorName>();
-        colorList.add(new ColorName("Black", 0x00, 0x00, 0x00)); // BW
-        colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
-        colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
-        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+        final ArrayList<ColorName> colorList = new ArrayList<>();
+        colorList.add(new ColorName("Black", 0x00, 0x00, 0x00));  // BW
+        colorList.add(new ColorName("White", 0xff, 0xff, 0xff));  // BW
+        colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80));    // BW
+        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80));   // BW
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
         colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
@@ -175,6 +176,7 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
         colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
+        colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
         colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
 
 
@@ -372,8 +374,9 @@ public class Main3Activity extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c1", Toast.LENGTH_SHORT).show();
                     selectv1 = colorv1;
                     System.out.println(selectv1);
-                    System.out.println("name_select : " + name_color1);
                     name_color = name_color1;
+                    System.out.println("name_select : " + name_color);
+
                 } else {
                     selectv1 = "#0";
                 }
@@ -386,8 +389,9 @@ public class Main3Activity extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c2", Toast.LENGTH_SHORT).show();
                     selectv2 = colorv2;
                     System.out.println(selectv2);
-                    System.out.println("name_select : " + name_color2);
                     name_color = name_color2;
+                    System.out.println("name_select : " + name_color);
+
                 } else {
                     selectv2 = "#0";
                 }
@@ -400,8 +404,9 @@ public class Main3Activity extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c3", Toast.LENGTH_SHORT).show();
                     selectv3 = colorv3;
                     System.out.println(selectv3);
-                    System.out.println("name_select : " + name_color3);
                     name_color = name_color3;
+                    System.out.println("name_select : " + name_color);
+
                 } else {
                     selectv3 = "#0";
                 }
@@ -413,12 +418,12 @@ public class Main3Activity extends AppCompatActivity {
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main3Activity.this,Main4Activity.class);
+                Intent intent = new Intent(SearchClothesfromcam.this,SearchClothesfromcam2.class);
                 intent.putExtra("image" , targetUri.toString());
                 intent.putExtra("color1", selectv1);
                 intent.putExtra("color2", selectv2);
                 intent.putExtra("color3", selectv3);
-                intent.putExtra("colorname" , name_color);
+                intent.putExtra("color_name" , name_color);
 
                 startActivity(intent);
             }
@@ -664,7 +669,9 @@ public class Main3Activity extends AppCompatActivity {
         //System.out.println("C3 : " + c3);
         System.out.println("test3 :" + testname3);
 
+
         checkBox3.setBackgroundColor(MutedColorDark);
 
     }
+
 }

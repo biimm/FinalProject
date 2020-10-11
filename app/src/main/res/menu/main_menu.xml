@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="หน้าหลัก"
+            android:icon="@drawable/ic_home_black_24dp"/>
+        <item
+            android:id="@+id/nav_add"
+            android:title="เพิ่มเสื้อผ้า"
+            android:icon="@drawable/ic_add"/>
+        <item
+            android:id="@+id/nav_show"
+            android:title="เสื้อผ้าทั้งหมด"
+            android:icon="@drawable/ic_format"/>
+    </group>
+
+
+        <item android:title="จัดการเสื้อผ้า">
+            <menu>
+                <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_use"
+                    android:title="กำลังใช้งาน"
+                    android:icon="@drawable/ic_check"/>
+
+                <item
+                    android:id="@+id/nav_basket"
+                    android:title="อยู่ในตะกร้าผ้า"
+                    android:icon="@drawable/ic_check"/>
+
+                <item
+                    android:id="@+id/nav_wash"
+                    android:title="ส่งซักรีด"
+                    android:icon="@drawable/ic_check"/>
+                </group>
+            </menu>
+        </item>
+
+
+    <item android:title="แมทช์เสื้อผ้า">
+        <menu>
+            <item
+                android:id="@+id/nav_search"
+                android:title="ค้นหาเสื้อผ้า"
+                android:icon="@drawable/ic_search"/>
+
+            <item
+                android:id="@+id/nav_match"
+                android:title="แมทช์เสื้อผ้า"
+                android:icon="@drawable/ic_search"/>
+
+        </menu>
+
+    </item>
+
+</menu>

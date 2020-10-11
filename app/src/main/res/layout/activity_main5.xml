@@ -1,376 +1,556 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gardient_background"
     tools:context=".Main5Activity"
-    >
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:id="@+id/drawer_layout">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu"
+        android:layout_gravity="start"
+        />
 
-        >
-        <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="MY WARDROBE"
-            android:textColor="#fff"
-            android:textSize="60dp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:fontFamily="@font/annie_use_your_telescope"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="#00FFFFFF"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_menu" />
 
-        <GridLayout
-            android:layout_width="399dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="6">
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:gravity="center_horizontal"
+            android:text="My Wardrobe"
+            android:textColor="#FFFFFF"
+            android:textSize="75sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/annie_use_your_telescope"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.559"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="6dp">
+                app:cardElevation="3dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/shirtshort">
-
-                    </ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/text1"
+                        android:layout_width="132dp"
                         android:layout_height="wrap_content"
-                        android:text="เสื้อยืดแขนสั้น"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold">
+                        android:layout_below="@id/image1"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="21dp"
+                        android:layout_marginRight="21dp"
+                        android:gravity="center_horizontal"
+                        android:text="เสือยืดแขนสั้น"
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                    </TextView>
-
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/shirtshort" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card2"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/longsleeve"></ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text2"
+                        android:layout_width="154dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image2"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:gravity="center_horizontal"
                         android:text="เสื้อยืดแขนยาว"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
-                </LinearLayout>
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/longsleeve" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card3"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/shortsleeves">
-
-                    </ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text3"
+                        android:layout_width="155dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image3"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
                         android:text="เสื้อเชิ้ตแขนสั้น"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold">
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                    </TextView>
-
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/shortsleeves" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card4"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/poloshirt"></ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text4"
+                        android:layout_width="154dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image4"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:gravity="center_horizontal"
                         android:text="เสื้อเชิ้ตแขนยาว"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image4"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/poloshirt" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card5"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/cardigan">
-
-                    </ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text5"
+                        android:layout_width="155dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image5"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
                         android:text="เสื้อไหมพรม"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold">
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                    </TextView>
-
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image5"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/cardigan" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card6"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/dress">
-
-                    </ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text6"
+                        android:layout_width="154dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image6"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:gravity="center_horizontal"
                         android:text="ชุดเดรส"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold">
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                    </TextView>
-
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image6"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/dress" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card7"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/trousers">
-
-                    </ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text7"
+                        android:layout_width="155dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image7"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
                         android:text="กางเกงขายาว"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold">
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                    </TextView>
-
-                </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image7"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/trousers" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card8"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/pants">
-
-                    </ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text8"
+                        android:layout_width="154dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image8"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:gravity="center_horizontal"
                         android:text="กางเกงขาสั้น"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
+                    <ImageView
+                        android:id="@+id/image8"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/pants" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card9"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/longskirt"></ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text9"
+                        android:layout_width="155dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image9"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center_horizontal"
                         android:text="กระโปรง"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
+                    <ImageView
+                        android:id="@+id/image9"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/longskirt" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card10"
-                android:layout_width="150dp"
-                android:layout_height="180dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="97dp"
-                        android:src="@drawable/jacket"></ImageView>
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/text10"
+                        android:layout_width="154dp"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/image10"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:gravity="center_horizontal"
                         android:text="แจ็คเก็ต"
-                        android:textColor="#000"
-                        android:textSize="20dp"
-                        android:textStyle="bold"></TextView>
-                </LinearLayout>
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/image10"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        app:srcCompat="@drawable/jacket" />
+                </RelativeLayout>
             </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </GridLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,31 +1,33 @@
 package com.example.myapplication.Adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.connectDB.ClothesWash;
 import com.example.myapplication.connectDB.Clothesmain;
-import com.example.myapplication.showlist.LundryStatus;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 
 public class ListLundryAdapter extends BaseAdapter {
     ImageView mimage;
     Button washcloth;
+
+    CheckBox[] mChecked;
+    CheckBox cBox;
+
+    public String id_choose = "";
+    public int position_choose = 0;
 
     Context mContext;
     ArrayList<String> id_cloth;
@@ -41,6 +43,7 @@ public class ListLundryAdapter extends BaseAdapter {
 
     EditText edtdate;
 
+    public ArrayList<String> position_test;
 
     public ListLundryAdapter(Context applicationContext, ArrayList<String> id, ArrayList<String> pic_cloth,ArrayList<String>status_cloth,ArrayList<String>date_cloth) {
 
@@ -48,6 +51,7 @@ public class ListLundryAdapter extends BaseAdapter {
         this.pic_cloth = new ArrayList<>();
         this.status_cloth = new ArrayList<>();
         this.date_cloth = new ArrayList<>();
+        this.position_test = new ArrayList<>();
 
         mContext = applicationContext;
         this.id_cloth = id;
@@ -61,6 +65,10 @@ public class ListLundryAdapter extends BaseAdapter {
 
         //pic_use = applicationContext.getIntent().getStringExtra("pic_use");
 
+        //for test
+        for(int i=0;i<id.size();++i){
+            position_test.add(i,"null");
+        }
     }
 
     @Override
@@ -89,32 +97,72 @@ public class ListLundryAdapter extends BaseAdapter {
         final Uri image_uri = Uri.parse(pic_cloth.get(position).toString());
         mimage.setImageURI(image_uri);
 
-        washcloth = convertView.findViewById(R.id.washcloth);
-        washcloth.setOnClickListener(new View.OnClickListener() {
+//        washcloth = convertView.findViewById(R.id.washcloth);
+//        washcloth.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("click");
+//
+//                //update status
+//                clothesmain.updatestatus(String.valueOf(id_cloth.get(position)) , "ส่งซักรีด");
+//
+//                //add date wash
+//                Calendar c = Calendar.getInstance();
+//                @SuppressLint("SimpleDateFormat") SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//                formattedDate = df.format(c.getTime());
+//
+////                SQLiteDatabase dbccloth = clothesWash.getWritableDatabase();
+////                ContentValues addwash = new ContentValues();
+////                addwash.put(PIC_CLOTH , String.valueOf(mimage));
+////                addwash.put(WASH_SENT , formattedDate);
+////                dbccloth.insert(TABLE_NAME4,null,addwash);
+//
+//                Toast.makeText(mContext,"ส่งซักรีดแล้ว: " +formattedDate,Toast.LENGTH_SHORT).show();
+//
+//                //refresh page
+//                Intent intent = new Intent(mContext, LundryStatus.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//                mContext.startActivity(intent);
+//            }
+//        });
+
+        cBox = (CheckBox) convertView.findViewById(R.id.checkBox6);
+        cBox.setTag(Integer.valueOf(position)); // set the tag so we can identify the correct row in the listener
+
+        if(cBox.isChecked()){
+            System.out.println("CHECK "+position);
+        }else{
+            System.out.println("NOT CHECK "+position);
+        }
+
+        //System.out.println("MCHECK "+ mChecked[position].isChecked());
+        //cBox.setChecked(mChecked[position].isChecked()); // set the status as we stored it
+        System.out.println(Integer.valueOf(position));
+        //cBox.setOnCheckedChangeListener(mListener); // set the listener
+
+        cBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                System.out.println("click");
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.isChecked()){
+                    System.out.println("Check correct : "+position);
+                    position_choose = position;
+                    position_test.set(position,id_cloth.get(position));
 
-                //update status
-                clothesmain.updatestatus(String.valueOf(id_cloth.get(position)) , "ส่งซักรีด");
+                    for(int i=0;i<position_test.size();++i){
+                        System.out.println("[POSITION_TEST] "+i+": "+position_test.get(i));
+                    }
 
-                //add date wash
-                Calendar c = Calendar.getInstance();
-                @SuppressLint("SimpleDateFormat") SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                formattedDate = df.format(c.getTime());
+                }else{
+                    System.out.println("Check not correct : "+position);
 
-//                SQLiteDatabase dbccloth = clothesWash.getWritableDatabase();
-//                ContentValues addwash = new ContentValues();
-//                addwash.put(PIC_CLOTH , String.valueOf(mimage));
-//                addwash.put(WASH_SENT , formattedDate);
-//                dbccloth.insert(TABLE_NAME4,null,addwash);
+                    position_test.set(position,"null");
 
-                Toast.makeText(mContext,"ส่งซักรีดแล้ว: " +formattedDate,Toast.LENGTH_SHORT).show();
+                    for(int i=0;i<position_test.size();++i){
+                        System.out.println("[POSITION_TEST] "+i+": "+position_test.get(i));
+                    }
 
-                //refresh page
-                Intent intent = new Intent(mContext, LundryStatus.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                mContext.startActivity(intent);
+
+                }
             }
         });
 

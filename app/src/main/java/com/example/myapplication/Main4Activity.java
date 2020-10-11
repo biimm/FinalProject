@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH1;
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH2;
@@ -47,7 +48,7 @@ public class Main4Activity extends AppCompatActivity {
 
     Clothesmain clothesmain;
     ColorClothes colorclothes;
-    ColorTone colorTone;
+
 
     String datatype , datastatus;
 
@@ -65,6 +66,10 @@ public class Main4Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sptype = (Spinner) findViewById(R.id.sptype);
         spstatus = (Spinner) findViewById(R.id.spstatus);
@@ -91,6 +96,8 @@ public class Main4Activity extends AppCompatActivity {
 
 
         tone = getIntent().getStringExtra("colorname");
+
+        System.out.println("gettonefrom3 : " + tone);
 
         ////// get check color
         Intent bundle = getIntent();

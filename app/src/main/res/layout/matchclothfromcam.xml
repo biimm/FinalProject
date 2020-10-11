@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gardients"
-    tools:context=".showlist.ResultMatchClothes">
+    tools:context=".showlist.Matchclothesfromcam">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,8 +15,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="10dp"
         android:background="#ace0f9" />
 
@@ -28,13 +29,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="-1dp"
         android:gravity="center_horizontal"
-        android:text="ผลลัพธ์การแมทช์"
+        android:text="ผลลัพธ์การค้นหา"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="40sp"
@@ -143,7 +144,7 @@
         android:layout_marginEnd="97dp"
         android:layout_marginRight="97dp"
         android:layout_marginBottom="16dp"
-        android:text="ใช้งาน"
+        android:text="ตกลง"
         android:textColor="#fff"
         android:textSize="20sp"
         android:textStyle="bold"
