@@ -36,7 +36,10 @@ public class SearchClothesfromcam2 extends AppCompatActivity {
     String V01 = "#0";
     String V02 = "#0";
     String V03 = "#0";
-    String tone = "";
+
+    String tone1 = "";
+    String tone2 = "";
+    String tone3 = "";
 
     String formattedDate = "";
 
@@ -68,8 +71,10 @@ public class SearchClothesfromcam2 extends AppCompatActivity {
 
 
 
-        tone = getIntent().getStringExtra("color_name");
-        System.out.print("tonecam2 : " + tone);
+        tone1 = getIntent().getStringExtra("tone1");
+        tone2 = getIntent().getStringExtra("tone2");
+        tone3 = getIntent().getStringExtra("tone3");
+        System.out.print("tonecam2 : " + tone1+" "+ tone2 + " "+ tone3);
 
         ////// get check color
         Intent bundle = getIntent();
@@ -116,7 +121,9 @@ public class SearchClothesfromcam2 extends AppCompatActivity {
                     Intent intent = new Intent(SearchClothesfromcam2.this, Matchclothesfromcam.class);
                     intent.putExtra("pictofind" , testimg1);
                     intent.putExtra("typecloth" , datatype);
-                    intent.putExtra("colorTone" , tone);
+                    intent.putExtra("colorTone1" , tone1);
+                    intent.putExtra("colorTone2" , tone2);
+                    intent.putExtra("colorTone3" , tone3);
                     startActivity(intent);
 
             }

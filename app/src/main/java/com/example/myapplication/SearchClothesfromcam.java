@@ -58,10 +58,14 @@ public class SearchClothesfromcam extends AppCompatActivity {
     String selectv3 = "#0";
     String colorv3 = "#0";
 
-    String name_color = "";
-    String name_color1 = "";
-    String name_color2 = "";
-    String name_color3 = "";
+    //select tone
+    String name_color_tone1 = "";
+    String name_color_tone2 = "";
+    String name_color_tone3 = "";
+    String select_tone1 = "";
+    String select_tone2 = "";
+    String select_tone3 = "";
+
 
     Button edit1,edit2,edit3;
     int counter = 0;
@@ -74,17 +78,20 @@ public class SearchClothesfromcam extends AppCompatActivity {
     boolean checkedit2 = false;
     boolean checkedit3 = false;
 
+    boolean check1 = false;
+    boolean check2 = false;
+    boolean check3 = false;
+
     ArrayList<ColorName> colorList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.takepictofind);
+        setContentView(R.layout.activity_main3);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         mImageView = findViewById(R.id.image_view);
         mCapture = findViewById(R.id.capture_image_btn);
@@ -159,11 +166,11 @@ public class SearchClothesfromcam extends AppCompatActivity {
         });
 
 
-        final ArrayList<ColorName> colorList = new ArrayList<>();
-        colorList.add(new ColorName("Black", 0x00, 0x00, 0x00));  // BW
-        colorList.add(new ColorName("White", 0xff, 0xff, 0xff));  // BW
-        colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80));    // BW
-        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80));   // BW
+        final ArrayList<ColorName> colorList = new ArrayList<ColorName>();
+        colorList.add(new ColorName("Black", 0x00, 0x00, 0x00)); // BW
+        colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
+        colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
+        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
         colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
@@ -176,7 +183,6 @@ public class SearchClothesfromcam extends AppCompatActivity {
         colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
         colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
-        colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
         colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
 
 
@@ -230,7 +236,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
                                         //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
                                     }
                                 }
-                                name_color = current_name;
+                                name_color_tone1 = current_name;
                                 System.out.println("NAME COLOR : "+current_name);
 
                                 String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
@@ -288,7 +294,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
                                         //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
                                     }
                                 }
-                                name_color = current_name;
+                                name_color_tone2 = current_name;
                                 System.out.println("NAME COLOR : "+current_name);
 
                                 String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
@@ -348,7 +354,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
                                     }
                                 }
 
-                                name_color = current_name;
+                                name_color_tone3 = current_name;
 
                                 System.out.println("NAME COLOR : "+current_name);
 
@@ -374,11 +380,13 @@ public class SearchClothesfromcam extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c1", Toast.LENGTH_SHORT).show();
                     selectv1 = colorv1;
                     System.out.println(selectv1);
-                    name_color = name_color1;
-                    System.out.println("name_select : " + name_color);
+                    //name_color = name_color1;
+                    select_tone1 = name_color_tone1;
+                    System.out.println("name_select : " + select_tone1);
 
                 } else {
                     selectv1 = "#0";
+                    select_tone1 = "";
                 }
             }
         });
@@ -389,11 +397,13 @@ public class SearchClothesfromcam extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c2", Toast.LENGTH_SHORT).show();
                     selectv2 = colorv2;
                     System.out.println(selectv2);
-                    name_color = name_color2;
-                    System.out.println("name_select : " + name_color);
+                    // name_color = name_color2;
+                    select_tone2 = name_color_tone2;
+                    System.out.println("name_select : " + select_tone2);
 
                 } else {
                     selectv2 = "#0";
+                    select_tone2 = "";
                 }
             }
         });
@@ -404,11 +414,13 @@ public class SearchClothesfromcam extends AppCompatActivity {
                     //Toast.makeText(Main3Activity.this, "select c3", Toast.LENGTH_SHORT).show();
                     selectv3 = colorv3;
                     System.out.println(selectv3);
-                    name_color = name_color3;
-                    System.out.println("name_select : " + name_color);
+                    //name_color = name_color3;
+                    select_tone3 = name_color_tone3;
+                    System.out.println("name_select : " + select_tone3);
 
                 } else {
                     selectv3 = "#0";
+                    select_tone3 = "";
                 }
             }
         });
@@ -423,7 +435,9 @@ public class SearchClothesfromcam extends AppCompatActivity {
                 intent.putExtra("color1", selectv1);
                 intent.putExtra("color2", selectv2);
                 intent.putExtra("color3", selectv3);
-                intent.putExtra("color_name" , name_color);
+                intent.putExtra("tone1" , select_tone1);
+                intent.putExtra("tone2" , select_tone2);
+                intent.putExtra("tone3" , select_tone3);
 
                 startActivity(intent);
             }
@@ -570,7 +584,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
                 //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
             }
         }
-        name_color1 = testname1;
+        name_color_tone1 = testname1;
         //System.out.println("C1 : " + c1);
         System.out.println("test1 :" + testname1);
 
@@ -611,7 +625,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
                 //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
             }
         }
-        name_color2 = testname2;
+        name_color_tone2 = testname2;
         //System.out.println("C2 : " + c2);
         System.out.println("test2 :" + testname2);
 
@@ -665,13 +679,11 @@ public class SearchClothesfromcam extends AppCompatActivity {
                 //System.out.println("mse_correct : " + name+" "+colorList.get(i).getName());
             }
         }
-        name_color3 = testname3;
+        name_color_tone3 = testname3;
         //System.out.println("C3 : " + c3);
         System.out.println("test3 :" + testname3);
-
 
         checkBox3.setBackgroundColor(MutedColorDark);
 
     }
-
 }

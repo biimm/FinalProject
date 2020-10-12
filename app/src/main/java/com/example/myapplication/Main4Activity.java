@@ -31,12 +31,17 @@ import androidx.appcompat.widget.Toolbar;
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH1;
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH2;
 import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_CLOTH3;
-import static com.example.myapplication.connectDB.Clothesmaininterface.COLOR_TONE;
 import static com.example.myapplication.connectDB.Clothesmaininterface.DATE_CLOTH;
 import static com.example.myapplication.connectDB.Clothesmaininterface.PIC_CLOTH;
 import static com.example.myapplication.connectDB.Clothesmaininterface.STATUS_CLOTH;
 import static com.example.myapplication.connectDB.Clothesmaininterface.TABLE_NAME1;
+import static com.example.myapplication.connectDB.Clothesmaininterface.TONE1;
+import static com.example.myapplication.connectDB.Clothesmaininterface.TONE2;
+import static com.example.myapplication.connectDB.Clothesmaininterface.TONE3;
 import static com.example.myapplication.connectDB.Clothesmaininterface.TYPE_CLOTH;
+import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE1;
+import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE2;
+import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE3;
 import static com.example.myapplication.connectDB.ColorClothesinterface.TABLE_NAME5;
 
 public class Main4Activity extends AppCompatActivity {
@@ -58,7 +63,9 @@ public class Main4Activity extends AppCompatActivity {
     String V01 = "#0";
     String V02 = "#0";
     String V03 = "#0";
-    String tone = "";
+    String tone1 = "";
+    String tone2 = "";
+    String tone3 = "";
 
     String formattedDate = "";
 
@@ -95,9 +102,12 @@ public class Main4Activity extends AppCompatActivity {
 
 
 
-        tone = getIntent().getStringExtra("colorname");
 
-        System.out.println("gettonefrom3 : " + tone);
+        tone1 = getIntent().getStringExtra("tone1");
+        tone2 = getIntent().getStringExtra("tone2");
+        tone3 = getIntent().getStringExtra("tone3");
+//
+        System.out.println("get_tone : " + tone1 + " "+ tone2 +" "+tone3);
 
         ////// get check color
         Intent bundle = getIntent();
@@ -205,7 +215,9 @@ public class Main4Activity extends AppCompatActivity {
         adddbclothesmain.put(COLOR_CLOTH1 , V01);
         adddbclothesmain.put(COLOR_CLOTH2 , V02);
         adddbclothesmain.put(COLOR_CLOTH3 , V03);
-        adddbclothesmain.put(COLOR_TONE , tone);
+        adddbclothesmain.put(TONE1 , tone1);
+        adddbclothesmain.put(TONE2 , tone2);
+        adddbclothesmain.put(TONE3 , tone3);
         dbclothesmain.insertOrThrow(TABLE_NAME1,null,adddbclothesmain);
     }
 
@@ -217,7 +229,9 @@ public class Main4Activity extends AppCompatActivity {
         addcolor.put(COLOR_CLOTH1 , V01);
         addcolor.put(COLOR_CLOTH2 , V02);
         addcolor.put(COLOR_CLOTH3 , V03);
-        addcolor.put(COLOR_TONE , tone);
+        addcolor.put(COLOR_TONE1 , tone1);
+        addcolor.put(COLOR_TONE2 , tone2);
+        addcolor.put(COLOR_TONE3 , tone3);
         dbcclothcolor.insertOrThrow(TABLE_NAME5 , null , addcolor);
     }
 

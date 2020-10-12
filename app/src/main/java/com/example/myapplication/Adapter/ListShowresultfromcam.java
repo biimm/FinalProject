@@ -31,7 +31,10 @@ public class ListShowresultfromcam extends BaseAdapter {
     ArrayList<String> color1;
     ArrayList<String> color2;
     ArrayList<String> color3;
-    ArrayList<String> tone;
+    ArrayList<String> tone1;
+    ArrayList<String> tone2;
+    ArrayList<String> tone3;
+
 
     Clothesmain clothesmain;
 
@@ -47,7 +50,9 @@ public class ListShowresultfromcam extends BaseAdapter {
             ,ArrayList<String> color1
             ,ArrayList<String> color2
             ,ArrayList<String> color3
-            ,ArrayList<String> tone)
+            ,ArrayList<String> tone1
+            ,ArrayList<String> tone2
+            ,ArrayList<String> tone3)
     {
 
         this.id = new ArrayList<>();
@@ -57,7 +62,9 @@ public class ListShowresultfromcam extends BaseAdapter {
         this.color1 = new ArrayList<>();
         this.color2 = new ArrayList<>();
         this.color3 = new ArrayList<>();
-        this.tone = new ArrayList<>();
+        this.tone1 = new ArrayList<>();
+        this.tone2 = new ArrayList<>();
+        this.tone3 = new ArrayList<>();
 
         mContext = applicationContext;
 
@@ -68,7 +75,9 @@ public class ListShowresultfromcam extends BaseAdapter {
         this.color1 = color1;
         this.color2 = color2;
         this.color3 = color3;
-        this.tone = tone;
+        this.tone1 = tone1;
+        this.tone2 = tone2;
+        this.tone3 = tone3;
 
         clothesmain = new Clothesmain(mContext);
     }

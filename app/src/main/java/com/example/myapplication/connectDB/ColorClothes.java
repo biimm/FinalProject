@@ -11,7 +11,9 @@ import static com.example.myapplication.connectDB.ClothesWashinterface.PIC_CLOTH
 import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_CLOTH1;
 import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_CLOTH2;
 import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_CLOTH3;
-import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE;
+import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE1;
+import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE2;
+import static com.example.myapplication.connectDB.ColorClothesinterface.COLOR_TONE3;
 import static com.example.myapplication.connectDB.ColorClothesinterface.TABLE_NAME5;
 
 
@@ -30,7 +32,9 @@ public class ColorClothes extends SQLiteOpenHelper {
                 + COLOR_CLOTH1 + " TEXT NOT NULL, "
                 + COLOR_CLOTH2 + " TEXT NOT NULL,"
                 + COLOR_CLOTH3 + " TEXT NOT NULL,"
-                + COLOR_TONE + " TEXT NOT NULL)");
+                + COLOR_TONE1 + " TEXT NOT NULL,"
+                + COLOR_TONE2 + " TEXT NOT NULL,"
+                + COLOR_TONE3 + " TEXT NOT NULL)");
     }
 
     @Override
