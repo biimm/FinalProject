@@ -97,12 +97,12 @@
                         android:gravity="center_horizontal"
                         android:text="เพิ่มเสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/image1"
-                        android:layout_width="120dp"
+                        android:layout_width="100dp"
                         android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
@@ -140,12 +140,12 @@
                         android:gravity="center_horizontal"
                         android:text="เสื้อผ้าทั้งหมด"
                         android:textColor="#170C0C"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/image2"
-                        android:layout_width="120dp"
+                        android:layout_width="100dp"
                         android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
@@ -196,12 +196,12 @@
                         android:gravity="center_horizontal"
                         android:text="จัดการเสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/image5"
-                        android:layout_width="120dp"
+                        android:layout_width="100dp"
                         android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
@@ -239,12 +239,12 @@
                         android:gravity="center_horizontal"
                         android:text="แมทช์เสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/image6"
-                        android:layout_width="120dp"
+                        android:layout_width="100dp"
                         android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"

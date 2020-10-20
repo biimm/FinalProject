@@ -15,9 +15,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="19dp"
         android:background="#ace0f9" />
 
     <TextView
@@ -36,11 +36,12 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="18dp"
+        android:padding="10dp"
         android:fontFamily="@font/marvel_bold"
         android:gravity="center"
         android:text="แมทช์เสื้อผ้า"
         android:textColor="#000"
-        android:textSize="48dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView

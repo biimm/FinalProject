@@ -57,12 +57,12 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="290dp"
+            android:layout_width="384dp"
+            android:layout_height="254dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
 
@@ -94,15 +94,15 @@
                         android:layout_marginEnd="21dp"
                         android:layout_marginRight="21dp"
                         android:gravity="center_horizontal"
-                        android:text="ค้นหาเสื้อผ้า"
+                        android:text="ตัดสินใจเลือกซื้อเสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/image1"
                         android:layout_width="100dp"
-                        android:layout_height="180dp"
+                        android:layout_height="150dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/search" />
@@ -113,12 +113,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="290dp"
+            android:layout_width="386dp"
+            android:layout_height="253dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -150,15 +149,15 @@
                         android:layout_marginEnd="21dp"
                         android:layout_marginRight="21dp"
                         android:gravity="center_horizontal"
-                        android:text="แมทช์เสื้อผ้า"
+                        android:text="ค้นหาเสื้อผ้าในตู้และแมทช์เสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/image2"
                         android:layout_width="100dp"
-                        android:layout_height="180dp"
+                        android:layout_height="150dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/jigsaw" />

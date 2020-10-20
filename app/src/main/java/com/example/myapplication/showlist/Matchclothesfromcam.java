@@ -120,6 +120,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
@@ -133,6 +134,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Olive" + '"'
                     + " or tone1 = " + '"' + "Watercress" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
@@ -146,9 +148,10 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Olive" + '"'
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
-                    + " or tone3= " + '"' + "Red" + '"'
-                    + " or tone3 = " + '"' + "Orange" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
+                    + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Orange" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
                     + " or tone3 = " + '"' + "Blue" + '"'
@@ -182,6 +185,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or  typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
@@ -202,6 +206,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
@@ -220,6 +225,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightgreen" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -262,6 +268,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Yellow" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -275,6 +282,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
                     + " or tone2 = " + '"' + "Green" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
@@ -282,6 +290,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
@@ -315,6 +324,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
@@ -328,6 +338,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightyellow" + '"'
                     + " or tone1 = " + '"' + "Lightgreen" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2= " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
@@ -344,6 +355,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
@@ -380,6 +392,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
@@ -400,6 +413,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
                     + " or tone2 = " + '"' + "Green" + '"'
@@ -414,6 +428,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
@@ -455,6 +470,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
@@ -463,6 +479,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightcoral" + '"'
                     + " or tone1 = " + '"' + "lightSalmon" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
@@ -473,6 +490,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightcoral" + '"'
                     + " or tone2 = " + '"' + "lightSalmon" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -507,6 +525,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -518,6 +537,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Green" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
@@ -529,6 +549,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Purple" + '"'
@@ -561,6 +582,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Blue" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -572,6 +594,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Watercress" + '"'
                     + " or tone1 = " + '"' + "Lightgreen" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
@@ -611,6 +634,89 @@ public class Matchclothesfromcam extends AppCompatActivity {
             }
         }
 
+        if((tonecloth_getsc1.equals("Jeans") || tonecloth_getsc2.equals("Green") || tonecloth_getsc3.equals("Green"))
+                && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
+                || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("แจ็คเก็ต"))){
+            SQLiteDatabase db44 = clothesmain.getWritableDatabase();
+            Cursor c44 = db44.rawQuery( " select * from " + TABLE_NAME1
+                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+                    + " and typecloth = " + '"' + "กางเกงขาสั้น" + '"'
+                    + " and typecloth = " + '"' + "กระโปรง" + '"' + ")"
+                    + " and " + "(tone1 = " + '"' + "Black" + '"'
+                    + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Navy" + '"'
+                    + " or tone1 = " + '"' + "Red" + '"'
+                    + " or tone1 = " + '"' + "Yellow" + '"'
+                    + " or tone1 = " + '"' + "Green" + '"'
+                    + " or tone1 = " + '"' + "Blue" + '"'
+                    + " or tone1 = " + '"' + "Purple" + '"'
+                    + " or tone1 = " + '"' + "Brown" + '"'
+                    + " or tone1 = " + '"' + "Beige" + '"'
+                    + " or tone1 = " + '"' + "Tan" + '"'
+                    + " or tone1 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Lightpink" + '"'
+                    + " or tone1 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "LightSalmon" + '"'
+                    + " or tone1 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Lightblue" + '"'
+                    + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Navy" + '"'
+                    + " or tone2 = " + '"' + "Red" + '"'
+                    + " or tone2 = " + '"' + "Yellow" + '"'
+                    + " or tone2 = " + '"' + "Green" + '"'
+                    + " or tone2 = " + '"' + "Blue" + '"'
+                    + " or tone2 = " + '"' + "Purple" + '"'
+                    + " or tone2 = " + '"' + "Brown" + '"'
+                    + " or tone2 = " + '"' + "Beige" + '"'
+                    + " or tone2 = " + '"' + "Tan" + '"'
+                    + " or tone2 = " + '"' + "Watercress" + '"'
+                    + " or tone2 = " + '"' + "Lightpink" + '"'
+                    + " or tone2 = " + '"' + "Lightcoral" + '"'
+                    + " or tone2 = " + '"' + "LightSalmon" + '"'
+                    + " or tone2 = " + '"' + "Lightgreen" + '"'
+                    + " or tone2 = " + '"' + "Lightyellow" + '"'
+                    + " or tone2 = " + '"' + "Lightblue" + '"'
+                    + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Yellow" + '"'
+                    + " or tone3 = " + '"' + "Green" + '"'
+                    + " or tone3 = " + '"' + "Blue" + '"'
+                    + " or tone3 = " + '"' + "Purple" + '"'
+                    + " or tone3 = " + '"' + "Brown" + '"'
+                    + " or tone3 = " + '"' + "Beige" + '"'
+                    + " or tone3 = " + '"' + "Tan" + '"'
+                    + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone3 = " + '"' + "Lightpink" + '"'
+                    + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone3 = " + '"' + "LightSalmon" + '"'
+                    + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
+                    + ")", null);
+            int countresdbcloth44 = c44.getCount();
+            if (countresdbcloth44 == 0) {
+                return;
+            } else {
+                while (c44.moveToNext()) {
+                    id.add(c44.getString(0));
+                    pic_cloth.add(c44.getString(1));
+                    status_cloth.add(c44.getString(2));
+                }
+            }
+        }
+
+
+
         if((tonecloth_getsc1.equals("Blue") || tonecloth_getsc2.equals("Blue") || tonecloth_getsc3.equals("Blue"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
@@ -625,6 +731,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Blue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
                     + " or tone1 = " + '"' + "Yellow" + '"'
@@ -633,6 +740,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightyellow" + '"'
                     + " or tone1 = " + '"' + "Lightblue" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
@@ -650,6 +758,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Blue" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Brown" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Purple" + '"'
@@ -684,6 +793,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
                     + " or tone1 = " + '"' + "Purple" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
@@ -692,6 +802,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightpink" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
@@ -702,6 +813,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightblue" + '"'
                     + " or tone2 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
@@ -738,6 +850,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
@@ -747,6 +860,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
@@ -755,6 +869,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -788,6 +903,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
                     + " or tone1 = " + '"' + "Beige" + '"'
@@ -797,6 +913,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightyellow" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
@@ -809,6 +926,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Brown" + '"'
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Purple" + '"'
@@ -841,6 +959,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
                     + " or tone1 = " + '"' + "Beige" + '"'
@@ -850,12 +969,14 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
                     + " or tone2 = " + '"' + "Beige" + '"'
                     + " or tone2 = " + '"' + "Tan" + '"'
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Brown" + '"'
@@ -909,6 +1030,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth14 = c14.getCount();
 
@@ -956,6 +1080,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth16 = c16.getCount();
 
@@ -1006,6 +1133,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth17 = c17.getCount();
 
@@ -1062,6 +1192,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Orange" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth18 = c18.getCount();
 
@@ -1115,6 +1248,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "LightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth19 = c19.getCount();
 
@@ -1177,6 +1313,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth20 = c20.getCount();
 
@@ -1230,6 +1369,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth21 = c21.getCount();
 
@@ -1257,7 +1399,6 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
-                    + " or tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
                     + " or tone1 = " + '"' + "Yellow" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -1269,7 +1410,6 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Olive" + '"'
                     + " or tone1 = " + '"' + "Watercress" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
-                    + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
@@ -1282,7 +1422,6 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Olive" + '"'
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
-                    + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3= " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
@@ -1294,6 +1433,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Olive" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth22 = c22.getCount();
             if (countresdbcloth22 == 0) {
@@ -1376,6 +1518,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "lightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth23 = c23.getCount();
             if (countresdbcloth23 == 0) {
@@ -1431,6 +1576,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                             + " or tone3 = " + '"' + "Brown" + '"'
                             + " or tone3 = " + '"' + "Purple" + '"'
                             + " or tone3 = " + '"' + "Lightpink" + '"'
+                            + " or tone1 = " + '"' + "Jeans" + '"'
+                            + " or tone2 = " + '"' + "Jeans" + '"'
+                            + " or tone3 = " + '"' + "Jeans" + '"'
                             + ")", null);
             int countresdbcloth24 = c24.getCount();
             if (countresdbcloth24 == 0) {
@@ -1497,6 +1645,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth25 = c25.getCount();
             if (countresdbcloth25 == 0) {
@@ -1572,6 +1723,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "lightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth26 = c26.getCount();
             if (countresdbcloth26 == 0) {
@@ -1626,6 +1780,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "lightSalmon" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth27 = c27.getCount();
             if (countresdbcloth27== 0) {
@@ -1680,6 +1837,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Brown" + '"'
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth28 = c28.getCount();
             if (countresdbcloth28 == 0) {
@@ -1743,6 +1903,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth29 = c29.getCount();
             if (countresdbcloth29 == 0) {
@@ -1755,6 +1918,91 @@ public class Matchclothesfromcam extends AppCompatActivity {
                 }
             }
         }
+
+
+        if((tonecloth_getsc1.equals("Jeans") || tonecloth_getsc2.equals("Green") || tonecloth_getsc3.equals("Green"))
+                && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
+                || typecloth_getsc.equals("กระโปรง"))){
+            SQLiteDatabase db30 = clothesmain.getWritableDatabase();
+            Cursor c30 = db30.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อยืดแขนยาว" + '"'
+                    + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
+                    + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
+                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " and " + "(tone1 = " + '"' + "Black" + '"'
+                    + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Navy" + '"'
+                    + " or tone1 = " + '"' + "Red" + '"'
+                    + " or tone1 = " + '"' + "Yellow" + '"'
+                    + " or tone1 = " + '"' + "Green" + '"'
+                    + " or tone1 = " + '"' + "Blue" + '"'
+                    + " or tone1 = " + '"' + "Purple" + '"'
+                    + " or tone1 = " + '"' + "Brown" + '"'
+                    + " or tone1 = " + '"' + "Beige" + '"'
+                    + " or tone1 = " + '"' + "Tan" + '"'
+                    + " or tone1 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Lightpink" + '"'
+                    + " or tone1 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "LightSalmon" + '"'
+                    + " or tone1 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Lightblue" + '"'
+                    + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Navy" + '"'
+                    + " or tone2 = " + '"' + "Red" + '"'
+                    + " or tone2 = " + '"' + "Yellow" + '"'
+                    + " or tone2 = " + '"' + "Green" + '"'
+                    + " or tone2 = " + '"' + "Blue" + '"'
+                    + " or tone2 = " + '"' + "Purple" + '"'
+                    + " or tone2 = " + '"' + "Brown" + '"'
+                    + " or tone2 = " + '"' + "Beige" + '"'
+                    + " or tone2 = " + '"' + "Tan" + '"'
+                    + " or tone2 = " + '"' + "Watercress" + '"'
+                    + " or tone2 = " + '"' + "Lightpink" + '"'
+                    + " or tone2 = " + '"' + "Lightcoral" + '"'
+                    + " or tone2 = " + '"' + "LightSalmon" + '"'
+                    + " or tone2 = " + '"' + "Lightgreen" + '"'
+                    + " or tone2 = " + '"' + "Lightyellow" + '"'
+                    + " or tone2 = " + '"' + "Lightblue" + '"'
+                    + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Yellow" + '"'
+                    + " or tone3 = " + '"' + "Green" + '"'
+                    + " or tone3 = " + '"' + "Blue" + '"'
+                    + " or tone3 = " + '"' + "Purple" + '"'
+                    + " or tone3 = " + '"' + "Brown" + '"'
+                    + " or tone3 = " + '"' + "Beige" + '"'
+                    + " or tone3 = " + '"' + "Tan" + '"'
+                    + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone3 = " + '"' + "Lightpink" + '"'
+                    + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone3 = " + '"' + "LightSalmon" + '"'
+                    + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
+                    + ")", null);
+            int countresdbcloth30 = c30.getCount();
+            if (countresdbcloth30 == 0) {
+                return;
+            } else {
+                while (c30.moveToNext()) {
+                    id.add(c30.getString(0));
+                    pic_cloth.add(c30.getString(1));
+                    status_cloth.add(c30.getString(2));
+                }
+            }
+        }
+
 
         if((tonecloth_getsc1.equals("Blue") || tonecloth_getsc2.equals("Blue") || tonecloth_getsc3.equals("Blue"))
                 && (typecloth_getsc.equals("กางเกงขายาว") || typecloth_getsc.equals("กางเกงขาสั้น")
@@ -1803,6 +2051,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth31 = c31.getCount();
             if (countresdbcloth31 == 0) {
@@ -1860,6 +2111,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth32 = c32.getCount();
             if (countresdbcloth32 == 0) {
@@ -1911,6 +2165,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth33 = c33.getCount();
             if (countresdbcloth33 == 0) {
@@ -1966,6 +2223,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth34 = c34.getCount();
             if (countresdbcloth34 == 0) {
@@ -2014,6 +2274,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth35 = c35.getCount();
             if (countresdbcloth35 == 0) {
@@ -2062,6 +2325,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth37 = c37.getCount();
             if (countresdbcloth37 == 0) {
@@ -2111,6 +2377,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth38 = c38.getCount();
             if (countresdbcloth38 == 0) {
@@ -2162,6 +2431,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth39 = c39.getCount();
             if (countresdbcloth39 == 0) {
@@ -2219,6 +2491,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Orange" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth40 = c40.getCount();
             if (countresdbcloth40 == 0) {
@@ -2273,6 +2548,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "LightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth41 = c41.getCount();
             if (countresdbcloth41 == 0) {
@@ -2336,6 +2614,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth42 = c42.getCount();
             if (countresdbcloth42 == 0) {
@@ -2390,6 +2671,9 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth43 = c43.getCount();
             if (countresdbcloth43 == 0) {

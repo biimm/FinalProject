@@ -120,11 +120,13 @@ public class ResultMatchClothes extends AppCompatActivity {
                 && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น")
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม") || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db1 = clothesmain.getWritableDatabase();
-            Cursor c1 = db1.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c1 = db1.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
@@ -138,6 +140,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Olive" + '"'
                     + " or tone1 = " + '"' + "Watercress" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
@@ -151,6 +154,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Olive" + '"'
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -181,12 +185,14 @@ public class ResultMatchClothes extends AppCompatActivity {
                 && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น")
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม") || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db2 = clothesmain.getWritableDatabase();
-            Cursor c2 = db2.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
-                    + " or  typecloth = " + '"' + "กางเกงขาสั้น" + '"'
-                    + " or  typecloth = " + '"' + "กระโปรง" + '"' + ")"
+            Cursor c2 = db2.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+                    + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
+                    + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
@@ -207,6 +213,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
@@ -225,6 +232,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightgreen" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -261,12 +269,14 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db3 = clothesmain.getWritableDatabase();
-            Cursor c3 = db3.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c3 = db3.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Yellow" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -280,6 +290,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
                     + " or tone2 = " + '"' + "Green" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
@@ -287,6 +298,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
@@ -314,12 +326,14 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db4 = clothesmain.getWritableDatabase();
-            Cursor c4 = db4.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c4 = db4.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
@@ -333,6 +347,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightyellow" + '"'
                     + " or tone1 = " + '"' + "Lightgreen" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2= " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
@@ -349,6 +364,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
@@ -379,12 +395,14 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db5 = clothesmain.getWritableDatabase();
-            Cursor c5 = db5.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c5 = db5.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
@@ -405,6 +423,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Red" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
                     + " or tone2 = " + '"' + "Green" + '"'
@@ -419,6 +438,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
@@ -453,13 +473,15 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db6 = clothesmain.getWritableDatabase();
-            Cursor c6 = db6.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c6 = db6.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
@@ -468,6 +490,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightcoral" + '"'
                     + " or tone1 = " + '"' + "lightSalmon" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
@@ -478,6 +501,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightcoral" + '"'
                     + " or tone2 = " + '"' + "lightSalmon" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -506,12 +530,14 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db7 = clothesmain.getWritableDatabase();
-            Cursor c7 = db7.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c7 = db7.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -523,6 +549,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Green" + '"'
                     + " or tone2 = " + '"' + "Yellow" + '"'
@@ -534,6 +561,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Purple" + '"'
@@ -559,13 +587,15 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db8 = clothesmain.getWritableDatabase();
-            Cursor c8 = db8.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
-                    + " and typecloth = " + '"' + "กางเกงขาสั้น" + '"'
-                    + " and typecloth = " + '"' + "กระโปรง" + '"' + ")"
+            Cursor c8 = db8.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+                    + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
+                    + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Blue" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
@@ -577,6 +607,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Watercress" + '"'
                     + " or tone1 = " + '"' + "Lightgreen" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
@@ -616,13 +647,97 @@ public class ResultMatchClothes extends AppCompatActivity {
             }
         }
 
+        if((tone1_getmatch.equals("Jeans") || tone2_getmatch.equals("Green") || tone3_getmatch.equals("Green"))
+                && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
+                || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
+                || clothselect_getmatch.equals("แจ็คเก็ต"))){
+            SQLiteDatabase db44 = clothesmain.getWritableDatabase();
+            Cursor c44 = db44.rawQuery( " select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+                    + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
+                    + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
+                    + " and " + "(tone1 = " + '"' + "Black" + '"'
+                    + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Navy" + '"'
+                    + " or tone1 = " + '"' + "Red" + '"'
+                    + " or tone1 = " + '"' + "Yellow" + '"'
+                    + " or tone1 = " + '"' + "Green" + '"'
+                    + " or tone1 = " + '"' + "Blue" + '"'
+                    + " or tone1 = " + '"' + "Purple" + '"'
+                    + " or tone1 = " + '"' + "Brown" + '"'
+                    + " or tone1 = " + '"' + "Beige" + '"'
+                    + " or tone1 = " + '"' + "Tan" + '"'
+                    + " or tone1 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Lightpink" + '"'
+                    + " or tone1 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "LightSalmon" + '"'
+                    + " or tone1 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Lightblue" + '"'
+                    + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Navy" + '"'
+                    + " or tone2 = " + '"' + "Red" + '"'
+                    + " or tone2 = " + '"' + "Yellow" + '"'
+                    + " or tone2 = " + '"' + "Green" + '"'
+                    + " or tone2 = " + '"' + "Blue" + '"'
+                    + " or tone2 = " + '"' + "Purple" + '"'
+                    + " or tone2 = " + '"' + "Brown" + '"'
+                    + " or tone2 = " + '"' + "Beige" + '"'
+                    + " or tone2 = " + '"' + "Tan" + '"'
+                    + " or tone2 = " + '"' + "Watercress" + '"'
+                    + " or tone2 = " + '"' + "Lightpink" + '"'
+                    + " or tone2 = " + '"' + "Lightcoral" + '"'
+                    + " or tone2 = " + '"' + "LightSalmon" + '"'
+                    + " or tone2 = " + '"' + "Lightgreen" + '"'
+                    + " or tone2 = " + '"' + "Lightyellow" + '"'
+                    + " or tone2 = " + '"' + "Lightblue" + '"'
+                    + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Yellow" + '"'
+                    + " or tone3 = " + '"' + "Green" + '"'
+                    + " or tone3 = " + '"' + "Blue" + '"'
+                    + " or tone3 = " + '"' + "Purple" + '"'
+                    + " or tone3 = " + '"' + "Brown" + '"'
+                    + " or tone3 = " + '"' + "Beige" + '"'
+                    + " or tone3 = " + '"' + "Tan" + '"'
+                    + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone3 = " + '"' + "Lightpink" + '"'
+                    + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone3 = " + '"' + "LightSalmon" + '"'
+                    + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
+                    + ")", null);
+            int countresdbcloth44 = c44.getCount();
+            if (countresdbcloth44 == 0) {
+                return;
+            } else {
+                while (c44.moveToNext()) {
+                    id.add(c44.getString(0));
+                    pic_cloth.add(c44.getString(1));
+                    status_cloth.add(c44.getString(2));
+                }
+            }
+        }
+
+
         if((tone1_getmatch.equals("Blue") || tone2_getmatch.equals("Blue") || tone3_getmatch.equals("Blue"))
                 && (clothselect_getmatch.equals("เสื้อยืดแขนสั้น") || clothselect_getmatch.equals("เสื้อยืดแขนยาว")
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db9 = clothesmain.getWritableDatabase();
-            Cursor c9 = db9.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c9 = db9.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -630,6 +745,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Blue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
                     + " or tone1 = " + '"' + "Yellow" + '"'
@@ -638,6 +754,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightyellow" + '"'
                     + " or tone1 = " + '"' + "Lightblue" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
@@ -655,6 +772,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Blue" + '"'
                     + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Brown" + '"'
                     + " or tone3 = " + '"' + "Yellow" + '"'
                     + " or tone3 = " + '"' + "Purple" + '"'
@@ -680,8 +798,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db10 = clothesmain.getWritableDatabase();
-            Cursor c10 = db10.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c10 = db10.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -689,6 +808,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Green" + '"'
                     + " or tone1 = " + '"' + "Purple" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
@@ -697,6 +817,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightpink" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
@@ -707,6 +828,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Lightblue" + '"'
                     + " or tone2 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
@@ -736,13 +858,15 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db11 = clothesmain.getWritableDatabase();
-            Cursor c11 = db11.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c11 = db11.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
@@ -752,6 +876,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Orange" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
@@ -760,6 +885,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Orange" + '"'
@@ -786,13 +912,15 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db12 = clothesmain.getWritableDatabase();
-            Cursor c12 = db12.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c12 = db12.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
                     + " or tone1 = " + '"' + "Beige" + '"'
@@ -802,6 +930,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone1 = " + '"' + "Lightyellow" + '"'
                     + " or tone2 = " + '"' + "Black" + '"'
                     + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
@@ -814,6 +943,7 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "White" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Brown" + '"'
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Purple" + '"'
@@ -839,13 +969,15 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db13 = clothesmain.getWritableDatabase();
-            Cursor c13 = db13.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c13 = db13.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
                     + " or tone1 = " + '"' + "Brown" + '"'
                     + " or tone1 = " + '"' + "Beige" + '"'
@@ -855,12 +987,14 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone2 = " + '"' + "White" + '"'
                     + " or tone2 = " + '"' + "Gray" + '"'
                     + " or tone2 = " + '"' + "Navy" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
                     + " or tone2 = " + '"' + "Brown" + '"'
                     + " or tone2 = " + '"' + "Beige" + '"'
                     + " or tone2 = " + '"' + "Tan" + '"'
                     + " or tone2 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Black" + '"'
                     + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + " or tone3 = " + '"' + "Gray" + '"'
                     + " or tone3 = " + '"' + "Navy" + '"'
                     + " or tone3 = " + '"' + "Brown" + '"'
@@ -886,8 +1020,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db14 = clothesmain.getWritableDatabase();
-            Cursor c14 = db14.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c14 = db14.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -914,6 +1049,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth14 = c14.getCount();
 
@@ -933,8 +1071,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db16 = clothesmain.getWritableDatabase();
-            Cursor c16 = db16.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c16 = db16.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -961,6 +1100,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth16 = c16.getCount();
 
@@ -980,8 +1122,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db17 = clothesmain.getWritableDatabase();
-            Cursor c17 = db17.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c17 = db17.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -1011,6 +1154,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth17 = c17.getCount();
 
@@ -1030,8 +1176,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db18 = clothesmain.getWritableDatabase();
-            Cursor c18 = db18.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c18 = db18.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -1067,6 +1214,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Orange" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth18 = c18.getCount();
 
@@ -1086,8 +1236,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db19 = clothesmain.getWritableDatabase();
-            Cursor c19 = db19.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c19 = db19.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -1120,6 +1271,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "LightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth19 = c19.getCount();
 
@@ -1139,8 +1293,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db20 = clothesmain.getWritableDatabase();
-            Cursor c20 = db20.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c20 = db20.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -1182,6 +1337,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth20 = c20.getCount();
 
@@ -1201,8 +1359,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                 || clothselect_getmatch.equals("เสื้อเชิ้ตแขนสั้น") || clothselect_getmatch.equals("เสื้อเชิ้ตแขนยาว") || clothselect_getmatch.equals("เสื้อไหมพรม")
                 || clothselect_getmatch.equals("แจ็คเก็ต"))){
             SQLiteDatabase db21 = clothesmain.getWritableDatabase();
-            Cursor c21 = db21.rawQuery("select * from " + TABLE_NAME1
-                    + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
+            Cursor c21 = db21.rawQuery(" select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
                     + " or typecloth = " + '"' + "กางเกงขาสั้น" + '"'
                     + " or typecloth = " + '"' + "กระโปรง" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
@@ -1235,6 +1394,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth21 = c21.getCount();
 
@@ -1253,7 +1415,8 @@ public class ResultMatchClothes extends AppCompatActivity {
                 && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
                 || clothselect_getmatch.equals("กระโปรง"))){
             SQLiteDatabase db22 = clothesmain.getWritableDatabase();
-            Cursor c22 = db22.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+            Cursor c22 = db22.rawQuery( " select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อยืดแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
@@ -1296,6 +1459,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Olive" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth22 = c22.getCount();
             if (countresdbcloth22 == 0) {
@@ -1314,7 +1480,8 @@ public class ResultMatchClothes extends AppCompatActivity {
                 && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
                 || clothselect_getmatch.equals("กระโปรง"))){
             SQLiteDatabase db23 = clothesmain.getWritableDatabase();
-            Cursor c23 = db23.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+            Cursor c23 = db23.rawQuery( " select * from " + TABLE_NAME1
+                    + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                     + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อยืดแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
@@ -1378,6 +1545,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "lightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth23 = c23.getCount();
             if (countresdbcloth23 == 0) {
@@ -1433,6 +1603,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                             + " or tone3 = " + '"' + "Brown" + '"'
                             + " or tone3 = " + '"' + "Purple" + '"'
                             + " or tone3 = " + '"' + "Lightpink" + '"'
+                            + " or tone1 = " + '"' + "Jeans" + '"'
+                            + " or tone2 = " + '"' + "Jeans" + '"'
+                            + " or tone3 = " + '"' + "Jeans" + '"'
                             + ")", null);
             int countresdbcloth24 = c24.getCount();
             if (countresdbcloth24 == 0) {
@@ -1499,6 +1672,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth25 = c25.getCount();
             if (countresdbcloth25 == 0) {
@@ -1574,6 +1750,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "lightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth26 = c26.getCount();
             if (countresdbcloth26 == 0) {
@@ -1628,6 +1807,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "lightSalmon" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth27 = c27.getCount();
             if (countresdbcloth27== 0) {
@@ -1682,6 +1864,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Brown" + '"'
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth28 = c28.getCount();
             if (countresdbcloth28 == 0) {
@@ -1745,6 +1930,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth29 = c29.getCount();
             if (countresdbcloth29 == 0) {
@@ -1754,6 +1942,89 @@ public class ResultMatchClothes extends AppCompatActivity {
                     id.add(c29.getString(0));
                     pic_cloth.add(c29.getString(1));
                     status_cloth.add(c29.getString(2));
+                }
+            }
+        }
+
+        if((tone1_getmatch.equals("Jeans") || tone2_getmatch.equals("Blue") || tone3_getmatch.equals("Blue"))
+                && (clothselect_getmatch.equals("กางเกงขายาว") || clothselect_getmatch.equals("กางเกงขาสั้น")
+                || clothselect_getmatch.equals("กระโปรง"))){
+            SQLiteDatabase db30 = clothesmain.getWritableDatabase();
+            Cursor c30 = db30.rawQuery( " select * from " + TABLE_NAME1 + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
+                    + " and " + "(typecloth = " + '"' + "เสื้อยืดแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อยืดแขนยาว" + '"'
+                    + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
+                    + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
+                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " and " + "(tone1 = " + '"' + "Black" + '"'
+                    + " or tone1 = " + '"' + "White" + '"'
+                    + " or tone1 = " + '"' + "Gray" + '"'
+                    + " or tone1 = " + '"' + "Navy" + '"'
+                    + " or tone1 = " + '"' + "Red" + '"'
+                    + " or tone1 = " + '"' + "Yellow" + '"'
+                    + " or tone1 = " + '"' + "Green" + '"'
+                    + " or tone1 = " + '"' + "Blue" + '"'
+                    + " or tone1 = " + '"' + "Purple" + '"'
+                    + " or tone1 = " + '"' + "Brown" + '"'
+                    + " or tone1 = " + '"' + "Beige" + '"'
+                    + " or tone1 = " + '"' + "Tan" + '"'
+                    + " or tone1 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Lightpink" + '"'
+                    + " or tone1 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "LightSalmon" + '"'
+                    + " or tone1 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Lightblue" + '"'
+                    + " or tone2 = " + '"' + "Black" + '"'
+                    + " or tone2 = " + '"' + "White" + '"'
+                    + " or tone2 = " + '"' + "Gray" + '"'
+                    + " or tone2 = " + '"' + "Navy" + '"'
+                    + " or tone2 = " + '"' + "Red" + '"'
+                    + " or tone2 = " + '"' + "Yellow" + '"'
+                    + " or tone2 = " + '"' + "Green" + '"'
+                    + " or tone2 = " + '"' + "Blue" + '"'
+                    + " or tone2 = " + '"' + "Purple" + '"'
+                    + " or tone2 = " + '"' + "Brown" + '"'
+                    + " or tone2 = " + '"' + "Beige" + '"'
+                    + " or tone2 = " + '"' + "Tan" + '"'
+                    + " or tone2 = " + '"' + "Watercress" + '"'
+                    + " or tone2 = " + '"' + "Lightpink" + '"'
+                    + " or tone2 = " + '"' + "Lightcoral" + '"'
+                    + " or tone2 = " + '"' + "LightSalmon" + '"'
+                    + " or tone2 = " + '"' + "Lightgreen" + '"'
+                    + " or tone2 = " + '"' + "Lightyellow" + '"'
+                    + " or tone2 = " + '"' + "Lightblue" + '"'
+                    + " or tone3 = " + '"' + "White" + '"'
+                    + " or tone3 = " + '"' + "Gray" + '"'
+                    + " or tone3 = " + '"' + "Navy" + '"'
+                    + " or tone3 = " + '"' + "Red" + '"'
+                    + " or tone3 = " + '"' + "Yellow" + '"'
+                    + " or tone3 = " + '"' + "Green" + '"'
+                    + " or tone3 = " + '"' + "Blue" + '"'
+                    + " or tone3 = " + '"' + "Purple" + '"'
+                    + " or tone3 = " + '"' + "Brown" + '"'
+                    + " or tone3 = " + '"' + "Beige" + '"'
+                    + " or tone3 = " + '"' + "Tan" + '"'
+                    + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone3 = " + '"' + "Lightpink" + '"'
+                    + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone3 = " + '"' + "LightSalmon" + '"'
+                    + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
+                    + ")", null);
+            int countresdbcloth30 = c30.getCount();
+            if (countresdbcloth30 == 0) {
+                return;
+            } else {
+                while (c30.moveToNext()) {
+                    id.add(c30.getString(0));
+                    pic_cloth.add(c30.getString(1));
+                    status_cloth.add(c30.getString(2));
                 }
             }
         }
@@ -1805,6 +2076,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth31 = c31.getCount();
             if (countresdbcloth31 == 0) {
@@ -1862,6 +2136,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth32 = c32.getCount();
             if (countresdbcloth32 == 0) {
@@ -1913,6 +2190,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth33 = c33.getCount();
             if (countresdbcloth33 == 0) {
@@ -1968,6 +2248,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Red" + '"'
                     + " or tone3 = " + '"' + "Green" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth34 = c34.getCount();
             if (countresdbcloth34 == 0) {
@@ -2016,6 +2299,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Beige" + '"'
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Watercress" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth35 = c35.getCount();
             if (countresdbcloth35 == 0) {
@@ -2064,6 +2350,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth37 = c37.getCount();
             if (countresdbcloth37 == 0) {
@@ -2113,6 +2402,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Tan" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth38 = c38.getCount();
             if (countresdbcloth38 == 0) {
@@ -2164,6 +2456,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightcoral" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth39 = c39.getCount();
             if (countresdbcloth39 == 0) {
@@ -2221,6 +2516,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Orange" + '"'
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth40 = c40.getCount();
             if (countresdbcloth40 == 0) {
@@ -2275,6 +2573,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightpink" + '"'
                     + " or tone3 = " + '"' + "LightSalmon" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth41 = c41.getCount();
             if (countresdbcloth41 == 0) {
@@ -2338,6 +2639,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightblue" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth42 = c42.getCount();
             if (countresdbcloth42 == 0) {
@@ -2392,6 +2696,9 @@ public class ResultMatchClothes extends AppCompatActivity {
                     + " or tone3 = " + '"' + "Watercress" + '"'
                     + " or tone3 = " + '"' + "Lightyellow" + '"'
                     + " or tone3 = " + '"' + "Lightgreen" + '"'
+                    + " or tone1 = " + '"' + "Jeans" + '"'
+                    + " or tone2 = " + '"' + "Jeans" + '"'
+                    + " or tone3 = " + '"' + "Jeans" + '"'
                     + ")", null);
             int countresdbcloth43 = c43.getCount();
             if (countresdbcloth43 == 0) {

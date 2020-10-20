@@ -101,7 +101,7 @@
                         android:gravity="center_horizontal"
                         android:text="เสือยืดแขนสั้น"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -144,7 +144,7 @@
                         android:gravity="center_horizontal"
                         android:text="เสื้อยืดแขนยาว"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -199,7 +199,7 @@
                         android:gravity="center_horizontal"
                         android:text="เสื้อเชิ้ตแขนสั้น"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -242,7 +242,7 @@
                         android:gravity="center_horizontal"
                         android:text="เสื้อเชิ้ตแขนยาว"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -297,7 +297,7 @@
                         android:gravity="center_horizontal"
                         android:text="เสื้อไหมพรม"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -340,7 +340,7 @@
                         android:gravity="center_horizontal"
                         android:text="ชุดเดรส"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -395,7 +395,7 @@
                         android:gravity="center_horizontal"
                         android:text="กางเกงขายาว"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -438,7 +438,7 @@
                         android:gravity="center_horizontal"
                         android:text="กางเกงขาสั้น"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -493,7 +493,7 @@
                         android:gravity="center_horizontal"
                         android:text="กระโปรง"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -536,7 +536,7 @@
                         android:gravity="center_horizontal"
                         android:text="แจ็คเก็ต"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <ImageView

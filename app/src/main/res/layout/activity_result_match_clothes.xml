@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="14dp"
         android:background="#ace0f9" />
 
     <TextView
@@ -35,9 +35,10 @@
         android:layout_marginRight="0dp"
         android:gravity="center_horizontal"
         android:text="ผลลัพธ์การแมทช์"
+        android:padding="8dp"
         android:textAlignment="center"
         android:textColor="#000"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <ImageView
@@ -79,6 +80,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_below="@+id/Linear1"
@@ -104,10 +106,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="108dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="73dp"
+        android:layout_below="@+id/line"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,13 +119,13 @@
             android:id="@+id/gridview_result"
             android:layout_width="420dp"
             android:layout_height="278dp"
-            android:gravity="center"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="9dp"
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
-            android:numColumns="1" >
+            android:gravity="center"
+            android:numColumns="1">
 
         </GridView>
 
@@ -131,8 +133,8 @@
 
     <Button
         android:id="@+id/use_btn"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -140,12 +142,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="89dp"
         android:layout_marginLeft="89dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginRight="97dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/round_bg"
         android:text="ใช้งาน"
         android:textColor="#fff"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:background="@drawable/round_bg"/>
+        android:textStyle="bold" />
 </RelativeLayout>

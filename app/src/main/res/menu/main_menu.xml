@@ -44,12 +44,12 @@
         <menu>
             <item
                 android:id="@+id/nav_search"
-                android:title="ค้นหาเสื้อผ้า"
+                android:title="ตัดสินใจเลือกซื้อเสื้อผ้า"
                 android:icon="@drawable/ic_search"/>
 
             <item
                 android:id="@+id/nav_match"
-                android:title="แมทช์เสื้อผ้า"
+                android:title="ค้นหาเสื้อผ้าในตู้และแมทช์เสื้อผ้า"
                 android:icon="@drawable/ic_search"/>
 
         </menu>

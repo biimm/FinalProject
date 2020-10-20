@@ -171,6 +171,7 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
         colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
         colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+        colorList.add(new ColorName("Jeans" , 0x15 , 0x60 , 0xdb));
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
         colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
@@ -178,7 +179,7 @@ public class Main3Activity extends AppCompatActivity {
 
         colorList.add(new ColorName("Green", 0x00, 0xff, 0x00)); // cold
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
-        colorList.add(new ColorName("Purple", 0x80, 0x00, 0x80)); // cold
+        colorList.add(new ColorName("Purple", 0x94, 0x00, 0xd3)); // cold
 
         colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
@@ -513,6 +514,7 @@ public class Main3Activity extends AppCompatActivity {
     }
 
 
+
     //extract dominent colors
     private void extractProminentColors(Bitmap bitmap){
         int defaultColor = 0x000000;
@@ -524,6 +526,7 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
         colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
         colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+        colorList.add(new ColorName("Jeans" , 0x15 , 0x60 , 0xdb));
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
         colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
@@ -531,7 +534,7 @@ public class Main3Activity extends AppCompatActivity {
 
         colorList.add(new ColorName("Green", 0x00, 0xff, 0x00)); // cold
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
-        colorList.add(new ColorName("Purple", 0x80, 0x00, 0x80)); // cold
+        colorList.add(new ColorName("Purple", 0x94, 0x00, 0xd3));  // cold
 
         colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth

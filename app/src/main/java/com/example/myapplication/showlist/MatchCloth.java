@@ -185,18 +185,21 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor1 = db1.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth1 = cursor1.getCount();
 
@@ -216,20 +219,24 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor2 = db2.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth2 = cursor2.getCount();
+
                 if (countresdbcloth2 == 0) {
                     return;
                 } else {
@@ -246,18 +253,21 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor3 = db3.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth3 = cursor3.getCount();
 
@@ -277,18 +287,21 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor4 = db4.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth4 = cursor4.getCount();
 
@@ -308,18 +321,21 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor5 = db5.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth5 = cursor5.getCount();
 
@@ -339,18 +355,21 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor6 = db6.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth6 = cursor6.getCount();
 
@@ -370,20 +389,22 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor7 = db7.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
-
                 int countresdbcloth7 = cursor7.getCount();
 
                 if (countresdbcloth7 == 0) {
@@ -402,18 +423,22 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor8 = db8.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth8 = cursor8.getCount();
 
@@ -433,18 +458,21 @@ public class MatchCloth extends AppCompatActivity {
                 Cursor cursor9 = db9.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth9 = cursor9.getCount();
 
@@ -459,23 +487,27 @@ public class MatchCloth extends AppCompatActivity {
                         tone3.add(cursor9.getString(10));
                     }
                 }
-            } else if (datatype1.equals("แจ็คเก็ต")) {
+            }
+            else if (datatype1.equals("แจ็คเก็ต")) {
                 SQLiteDatabase db10 = clothesmain.getWritableDatabase();
                 Cursor cursor10 = db10.rawQuery("select * from " + TABLE_NAME1
                         + " where statuscloth = " + '"' + "พร้อมใช้งาน" + '"'
                         + " and typecloth = " + '"' + datatype1 + '"'
-                        + " and " + "(tone1 = " + '"' + "BLACK" + '"'
+                        + " and " + "(tone1 = " + '"' + "Black" + '"'
                         + " or tone1 = " + '"' + "White" + '"'
                         + " or tone1 = " + '"' + "Gray" + '"'
                         + " or tone1 = " + '"' + "Navy" + '"'
+                        + " or tone1 = " + '"' + "Jeans" + '"'
                         + " or tone2 = " + '"' + "Black" + '"'
                         + " or tone2 = " + '"' + "White" + '"'
                         + " or tone2 = " + '"' + "Gray" + '"'
                         + " or tone2 = " + '"' + "Navy" + '"'
+                        + " or tone2 = " + '"' + "Jeans" + '"'
                         + " or tone3 = " + '"' + "Black" + '"'
                         + " or tone3 = " + '"' + "White" + '"'
                         + " or tone3 = " + '"' + "Gray" + '"'
                         + " or tone3 = " + '"' + "Navy" + '"'
+                        + " or tone3 = " + '"' + "Jeans" + '"'
                         + ")", null);
                 int countresdbcloth10 = cursor10.getCount();
 
@@ -492,7 +524,6 @@ public class MatchCloth extends AppCompatActivity {
                 }
             }
         }
-
         /////////////// hot ///////////////////
 
         if (datacolor.equals("โทนร้อน")) {
