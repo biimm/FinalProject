@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dropdown_menu1"
+        android:title="พร้อมใช้งาน"
+        />
+    <item
+        android:id="@+id/dropdown_menu2"
+        android:title="กำลังใช้งาน"
+       />
+    <item
+        android:id="@+id/dropdown_menu3"
+        android:title="ตะกร้าผ้า"
+
+        />
+
+    <item
+        android:id="@+id/dropdown_menu4"
+        android:title="ส่งซักรีด"
+         />
+
+</menu>

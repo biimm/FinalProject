@@ -22,50 +22,52 @@
         <activity android:name=".Adapter.ListShowresultfromcam" />
         <activity android:name=".Adapter.ListStatusAdapter" />
         <activity android:name=".Adapter.ListclothesAdapter" />
-        <activity android:name=".Adapter.ListLundryAdapter"/>
-        <activity android:name=".Adapter.ListSearchAdapter"/>
-        <activity android:name=".Adapter.ListShowResult"/>
-        <activity android:name=".Adapter.ListWashAdapter"/>
+        <activity android:name=".Adapter.ListLundryAdapter" />
+        <activity android:name=".Adapter.ListSearchAdapter" />
+        <activity android:name=".Adapter.ListShowResult" />
+        <activity android:name=".Adapter.ListWashAdapter" />
 
-        <activity android:name=".showlist.ResultMatchClothes"
-            android:parentActivityName=".showlist.MatchCloth"/>
 
-        <activity android:name=".showlist.WashStatus"
+        <activity android:name=".showlist.ExampleResultMatch"
+            android:parentActivityName=".showlist.ResultMatchClothes"/>
+        <activity
+            android:name=".showlist.ResultMatchClothes"
+            android:parentActivityName=".showlist.MatchCloth" />
+        <activity android:name=".showlist.showall"
             android:parentActivityName=".function_status"/>
-
-        <activity android:name=".showlist.LundryStatus"
-            android:parentActivityName=".function_status"/>
-
-        <activity android:name=".SearchClothesfromcam"
-            android:parentActivityName=".FindClothes"/>
-
-        <activity android:name=".SearchClothesfromcam2"
-            android:parentActivityName=".SearchClothesfromcam"/>
-
-        <activity android:name=".showlist.Matchclothesfromcam"
-            android:parentActivityName=".SearchClothesfromcam"/>
-
-        <activity android:name=".showlist.MatchCloth"
-            android:parentActivityName=".FindClothes"/>
-
-        <activity android:name=".showlist.UseStatus"
-            android:parentActivityName=".function_status"/>
-
-        <activity android:name=".EditClothes"
-            android:parentActivityName=".Main5Activity"/>
-
-        <activity android:name=".Detaillistcloth"
-            android:parentActivityName=".Main5Activity"/>
-
-        <activity android:name=".showlist.Listclothes"
-            android:parentActivityName=".Main5Activity"/>
-
-        <activity android:name=".Main4Activity"
-            android:parentActivityName=".Main3Activity"/>
-
-        <activity android:name=".Main3Activity"
-            android:parentActivityName=".Main2Activity"/>
-
+        <activity
+            android:name=".showlist.WashStatus"
+            android:parentActivityName=".function_status" />
+        <activity
+            android:name=".showlist.LundryStatus"
+            android:parentActivityName=".function_status" />
+        <activity
+            android:name=".SearchClothesfromcam"
+            android:parentActivityName=".FindClothes" />
+        <activity
+            android:name=".showlist.Matchclothesfromcam"
+            android:parentActivityName=".SearchClothesfromcam" />
+        <activity
+            android:name=".showlist.MatchCloth"
+            android:parentActivityName=".FindClothes" />
+        <activity
+            android:name=".showlist.UseStatus"
+            android:parentActivityName=".function_status" />
+        <activity
+            android:name=".EditClothes"
+            android:parentActivityName=".Main5Activity" />
+        <activity
+            android:name=".Detaillistcloth"
+            android:parentActivityName=".Main5Activity" />
+        <activity
+            android:name=".showlist.Listclothes"
+            android:parentActivityName=".Main5Activity" />
+        <activity
+            android:name=".Main4Activity"
+            android:parentActivityName=".Main3Activity" />
+        <activity
+            android:name=".Main3Activity"
+            android:parentActivityName=".Main2Activity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

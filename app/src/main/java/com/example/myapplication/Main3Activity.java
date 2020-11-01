@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -45,6 +46,8 @@ public class Main3Activity extends AppCompatActivity {
     Button mSave;
     ImageView mImageView;
     CheckBox checkBox1, checkBox2, checkBox3;
+
+    TextView text1,text2,text3;
 
     //check1
     String selectv1 = "#0";
@@ -105,6 +108,10 @@ public class Main3Activity extends AppCompatActivity {
         edit1 = (Button) findViewById(R.id.edit1);
         edit2 = (Button) findViewById(R.id.edit2);
         edit3 = (Button) findViewById(R.id.edit3);
+
+        text1 =  findViewById(R.id.text1);
+        text2 =  findViewById(R.id.text2);
+        text3 =  findViewById(R.id.text3);
 
         mImageView.setDrawingCacheEnabled(true);
         mImageView.buildDrawingCache(true);
@@ -170,7 +177,7 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("Black", 0x00, 0x00, 0x00)); // BW
         colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
         colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
-        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+        colorList.add(new ColorName("Navy" , 0x02, 0x07, 0x5d)); // BW
         colorList.add(new ColorName("Jeans" , 0x15 , 0x60 , 0xdb));
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
@@ -181,7 +188,7 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
         colorList.add(new ColorName("Purple", 0x94, 0x00, 0xd3)); // cold
 
-        colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
+        colorList.add(new ColorName("Brown", 0x65, 0x43, 0x21)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
         colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
         colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
@@ -193,16 +200,18 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("lightSalmon" , 0xff, 0xa0, 0x7a)); // pastel
         colorList.add(new ColorName("Lightyellow" , 0xff, 0xff, 0xe0)); //pastel
         colorList.add(new ColorName("Lightgreen" , 0x90, 0xee, 0x90)); // pastel
-
+        colorList.add(new ColorName("Pastelpurple" , 0xb1,0xa2,0xca));
 
         edit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkedit1 = true;
                 checkBox1.getBackground().clearColorFilter();
-                checkBox1.setText("โปรดเลือกสีอีกครั้ง");
+                //checkBox1.setText("โปรดเลือกสีอีกครั้ง");
                 v1 = "#0";
                 colorv1 = "#0";
+
+                text1.setText("แตะสีที่ต้องการเปลี่ยนที่รูปภาพ");
 
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
@@ -245,7 +254,7 @@ public class Main3Activity extends AppCompatActivity {
                                 colorv1 = v1;
                                 checkBox1.setBackgroundColor(Color.parseColor(hex));
                                 System.out.println("Hex : " + hex);
-                                checkBox1.setText("");
+                                text1.setText("");
                                 checkedit1 = false;
                             }
                         }
@@ -260,9 +269,12 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 checkedit2 = true;
                 checkBox2.getBackground().clearColorFilter();
-                checkBox2.setText("โปรดเลือกสีอีกครั้ง");
+                //checkBox2.setText("โปรดเลือกสีอีกครั้ง");
                 v2 = "#0";
                 colorv2 = "#0";
+
+                text2.setText("แตะสีที่ต้องการเปลี่ยนที่รูปภาพ");
+
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent motionEvent) {
@@ -303,7 +315,8 @@ public class Main3Activity extends AppCompatActivity {
                                 colorv2 = v2;
                                 checkBox2.setBackgroundColor(Color.parseColor(hex));
                                 System.out.println("Hex : " + hex);
-                                checkBox2.setText("");
+                                text2.setText("");
+
                                 checkedit2 = false;
                             }
                         }
@@ -318,9 +331,11 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 checkedit3 = true;
                 checkBox3.getBackground().clearColorFilter();
-                checkBox3.setText("โปรดเลือกสีอีกครั้ง");
+               // checkBox3.setText("โปรดเลือกสีอีกครั้ง");
                 v3 = "#0";
                 colorv3 = "#0";
+
+                text3.setText("แตะสีที่ต้องการเปลี่ยนที่รูปภาพ");
 
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
@@ -364,7 +379,7 @@ public class Main3Activity extends AppCompatActivity {
                                 colorv3 = v3;
                                 checkBox3.setBackgroundColor(Color.parseColor(hex));
                                 System.out.println("Hex : " + hex);
-                                checkBox3.setText("");
+                                text3.setText("");
                                 checkedit3 = false;
                             }
                         }
@@ -536,10 +551,10 @@ public class Main3Activity extends AppCompatActivity {
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
         colorList.add(new ColorName("Purple", 0x94, 0x00, 0xd3));  // cold
 
-        colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
+        colorList.add(new ColorName("Brown", 0x65, 0x43, 0x21)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
         colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
-        colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
+        //colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
         colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
 
 
@@ -688,5 +703,14 @@ public class Main3Activity extends AppCompatActivity {
 
         checkBox3.setBackgroundColor(MutedColorDark);
 
+    }
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+        Intent in = new Intent(this, Main2Activity.class);
+        in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(in);
+        overridePendingTransition(0,0);
+        // moveTaskToBack(true);
     }
 }

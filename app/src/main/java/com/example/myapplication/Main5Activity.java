@@ -10,6 +10,7 @@ import com.example.myapplication.showlist.LundryStatus;
 import com.example.myapplication.showlist.MatchCloth;
 import com.example.myapplication.showlist.UseStatus;
 import com.example.myapplication.showlist.WashStatus;
+import com.example.myapplication.showlist.showall;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -22,7 +23,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class Main5Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    CardView cardView1,cardView2,cardView3,cardView4,cardView5,cardView6,cardView7,cardView8,cardView9,cardView10;
+    CardView cardView1,cardView2,cardView3,cardView4,cardView5,cardView6,cardView7,cardView8,cardView9,cardView10,cardView11,cardView12;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -64,6 +65,9 @@ public class Main5Activity extends AppCompatActivity implements NavigationView.O
         cardView8 = (CardView)findViewById(R.id.card8);
         cardView9 = (CardView)findViewById(R.id.card9);
         cardView10 = (CardView)findViewById(R.id.card10);
+        cardView11 = (CardView)findViewById(R.id.card11);
+        cardView12 = (CardView)findViewById(R.id.card12);
+
 
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +168,24 @@ public class Main5Activity extends AppCompatActivity implements NavigationView.O
                 //Toast.makeText(getApplicationContext(),"select card10",Toast.LENGTH_SHORT).show();
             }
         });
+        cardView11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main5Activity.this,Listclothes.class);
+                intent.putExtra("name_type","เสื้อโปโลแขนสั้น");
+                startActivity(intent);
+                //Toast.makeText(getApplicationContext(),"select card10",Toast.LENGTH_SHORT).show();
+            }
+        });
+        cardView12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main5Activity.this,Listclothes.class);
+                intent.putExtra("name_type","เสื้อโปโลแขนยาว");
+                startActivity(intent);
+                //Toast.makeText(getApplicationContext(),"select card10",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     public void onBackPressed() {
 
@@ -171,6 +193,10 @@ public class Main5Activity extends AppCompatActivity implements NavigationView.O
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            Intent in = new Intent(this, Main2Activity.class);
+            in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(in);
+            overridePendingTransition(0,0);
         }
     }
 
@@ -179,33 +205,45 @@ public class Main5Activity extends AppCompatActivity implements NavigationView.O
         switch (item.getItemId()){
             case R.id.nav_home:
                 Intent intent = new Intent(Main5Activity.this , Main2Activity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
                 break;
             case R.id.nav_add:
                 Intent intent1 = new Intent(Main5Activity.this , Main3Activity.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent1);
                 break;
             case R.id.nav_show:
                 Intent intent2 = new Intent(Main5Activity.this , Main5Activity.class);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent2);
                 break;
-            case R.id.nav_use:
-                Intent intent3 = new Intent(Main5Activity.this , UseStatus.class);
+            case R.id.nav_all:
+                Intent intent3 = new Intent(Main5Activity.this , showall.class);
+                intent3.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent3);
-                break;
-            case R.id.nav_basket:
-                Intent intent4 = new Intent(Main5Activity.this, LundryStatus.class);
+            case R.id.nav_use:
+                Intent intent4 = new Intent(Main5Activity.this , UseStatus.class);
+                intent4.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent4);
                 break;
-            case R.id.nav_wash:
-                Intent intent5 = new Intent(Main5Activity.this , WashStatus.class);
+            case R.id.nav_basket:
+                Intent intent5 = new Intent(Main5Activity.this, LundryStatus.class);
+                intent5.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent5);
-            case R.id.nav_search:
-                Intent intent6 = new Intent(Main5Activity.this , SearchClothesfromcam.class);
+                break;
+            case R.id.nav_wash:
+                Intent intent6 = new Intent(Main5Activity.this , WashStatus.class);
+                intent6.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent6);
-            case R.id.nav_match:
-                Intent intent7 = new Intent(Main5Activity.this , MatchCloth.class);
+            case R.id.nav_search:
+                Intent intent7 = new Intent(Main5Activity.this , SearchClothesfromcam.class);
+                intent7.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent7);
+            case R.id.nav_match:
+                Intent intent8 = new Intent(Main5Activity.this , MatchCloth.class);
+                intent8.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent8);
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -137,9 +137,9 @@ public class Main4Activity extends AppCompatActivity {
         adaptertype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sptype.setAdapter(adaptertype);
         sptype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-           @Override
-           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               datatype = (String) parent.getItemAtPosition(position);
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                datatype = (String) parent.getItemAtPosition(position);
 //               Toast.makeText(getApplicationContext(),"Select type : "+datatype,Toast.LENGTH_SHORT).show();
             }
             @Override
@@ -236,7 +236,15 @@ public class Main4Activity extends AppCompatActivity {
     }
 
 
-
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        this.finish();
+//        Intent in = new Intent(this, Main3Activity.class);
+//        in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//        startActivity(in);
+//        overridePendingTransition(0,0);
+//        // moveTaskToBack(true);
+//    }
 
 
 

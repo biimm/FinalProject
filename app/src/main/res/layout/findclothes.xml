@@ -94,9 +94,9 @@
                         android:layout_marginEnd="21dp"
                         android:layout_marginRight="21dp"
                         android:gravity="center_horizontal"
-                        android:text="ตัดสินใจเลือกซื้อเสื้อผ้า"
+                        android:text="ตัวช่วยในการเลือกซื้อเสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -105,7 +105,7 @@
                         android:layout_height="150dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/search" />
+                        app:srcCompat="@drawable/store" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
@@ -151,7 +151,7 @@
                         android:gravity="center_horizontal"
                         android:text="ค้นหาเสื้อผ้าในตู้และแมทช์เสื้อผ้า"
                         android:textColor="#170C0C"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <ImageView

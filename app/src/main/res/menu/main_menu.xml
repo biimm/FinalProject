@@ -21,6 +21,11 @@
         <item android:title="จัดการเสื้อผ้า">
             <menu>
                 <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_all"
+                        android:title="พร้อมใช้งาน"
+                        android:icon="@drawable/ic_check"/>
+
                 <item
                     android:id="@+id/nav_use"
                     android:title="กำลังใช้งาน"
@@ -44,7 +49,7 @@
         <menu>
             <item
                 android:id="@+id/nav_search"
-                android:title="ตัดสินใจเลือกซื้อเสื้อผ้า"
+                android:title="ตัวช่วยในการเลือกซื้อเสื้อผ้า"
                 android:icon="@drawable/ic_search"/>
 
             <item

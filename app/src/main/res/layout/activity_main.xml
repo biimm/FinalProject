@@ -31,7 +31,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="43dp"
         android:fontFamily="@font/annie_use_your_telescope"
         android:gravity="center_horizontal"
         android:text="MY WARDROBE"

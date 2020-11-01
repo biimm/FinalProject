@@ -64,40 +64,55 @@
     <GridView
         android:id="@+id/gridview_status"
         android:layout_width="match_parent"
-        android:layout_height="526dp"
+        android:layout_height="555dp"
         android:layout_below="@+id/ima"
-        android:layout_marginTop="5dp"
-        android:numColumns="auto_fit" />
-
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"
-        android:background="#80d0c7" />
+        android:numColumns="auto_fit" />
 
     <Button
-        android:id="@+id/washcloth"
-        android:layout_width="50dp"
-        android:layout_height="46dp"
+        android:id="@+id/show_dropdown_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_below="@+id/textshow"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/washing" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginRight="81dp"
+        android:background="@drawable/round_bg"
+        android:text="จัดการสถานะเสื้อผ้า"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/textshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridview_status"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:gravity="center_horizontal"
+        android:text="โปรดเลือกเสื้อผ้าที่ต้องการจัดการสถานะ" />
 
 
 

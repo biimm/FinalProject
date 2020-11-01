@@ -146,7 +146,7 @@
         android:layout_marginRight="78dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/round_bg"
-        android:text="ใช้งาน"
+        android:text="ดูตัวอย่าง"
         android:textColor="#fff"
         android:textSize="20sp"
         android:textStyle="bold" />

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gardients"
     android:id="@+id/relative"
-    tools:context=".showlist.UseStatus">
+    tools:context=".showlist.showall">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -38,7 +38,7 @@
         android:layout_marginRight="-1dp"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="กำลังใช้งาน"
+        android:text="พร้อมใช้งาน"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="30sp"
@@ -113,6 +113,5 @@
         android:layout_marginRight="2dp"
         android:gravity="center_horizontal"
         android:text="โปรดเลือกเสื้อผ้าที่ต้องการจัดการสถานะ" />
-
 
 </RelativeLayout>

@@ -56,109 +56,109 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8">
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_cloth"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="8dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_cloth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/text1"
-                        android:layout_width="132dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/image1"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginLeft="23dp"
-                        android:layout_marginTop="14dp"
-                        android:layout_marginEnd="21dp"
-                        android:layout_marginRight="21dp"
-                        android:gravity="center_horizontal"
-                        android:text="เพิ่มเสื้อผ้า"
-                        android:textColor="#170C0C"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginRight="21dp"
+                    android:gravity="center_horizontal"
+                    android:text="เพิ่มเสื้อผ้า"
+                    android:textColor="#170C0C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/image1"
-                        android:layout_width="100dp"
-                        android:layout_height="133dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/clothes" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="100dp"
+                    android:layout_height="133dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/clothes" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_list"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="8dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/text2"
-                        android:layout_width="154dp"
-                        android:layout_height="45dp"
-                        android:layout_below="@id/image2"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="11dp"
-                        android:layout_marginRight="11dp"
-                        android:gravity="center_horizontal"
-                        android:text="เสื้อผ้าทั้งหมด"
-                        android:textColor="#170C0C"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image2"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginRight="11dp"
+                    android:gravity="center_horizontal"
+                    android:text="เสื้อผ้าทั้งหมด"
+                    android:textColor="#170C0C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/image2"
-                        android:layout_width="100dp"
-                        android:layout_height="133dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/cs" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="100dp"
+                    android:layout_height="133dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/cs" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="255dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -181,20 +181,20 @@
 
                     <TextView
                         android:id="@+id/text3"
-                        android:layout_width="155dp"
-                        android:layout_height="45dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/image5"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="11dp"
-                        android:layout_marginLeft="11dp"
-                        android:layout_marginTop="13dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp"
                         android:gravity="center_horizontal"
-                        android:text="จัดการเสื้อผ้า"
+                        android:text="จัดการสถานะเสื้อผ้า"
                         android:textColor="#170C0C"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -225,7 +225,7 @@
                     <TextView
                         android:id="@+id/text4"
                         android:layout_width="154dp"
-                        android:layout_height="45dp"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/image6"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
@@ -233,7 +233,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="17dp"
                         android:layout_marginEnd="11dp"
                         android:layout_marginRight="11dp"
                         android:gravity="center_horizontal"

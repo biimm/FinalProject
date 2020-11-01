@@ -16,7 +16,10 @@
         <item>กางเกงขาสั้น</item>
         <item>กระโปรง</item>
         <item>แจ็คเก็ต</item>
+        <item>เสื้อโปโลแขนสั้น</item>
+        <item>เสื้อโปโลแขนยาว</item>
     </string-array>
+
     <string-array name="Spinner_Status">
         <item>โปรดเลือกสถานะเสื้อผ้า</item>
         <item>พร้อมใช้งาน</item>
@@ -27,11 +30,11 @@
 
     <string-array name="Spinner_Color">
         <item>โปรดเลือกสีเสื้อผ้า</item>
-        <item>ขาว-ดำ</item>
-        <item>โทนร้อน</item>
-        <item>โทนเย็น</item>
+        <item>ขาว-ดำ (สีดำ,สีขาว,สีเทา,สีกรม) </item>
+        <item>โทนร้อน (สีแดง,สีส้ม,สีเหลือง)</item>
+        <item>โทนเย็น (สีเขียว,สีน้ำเงิน,สีม่วง)</item>
         <item>เอิร์ธโทน</item>
-        <item>พาสเทล</item>
+        <item>โทนพาสเทล</item>
     </string-array>
 
     <string name="vibrant">Vibrant</string>

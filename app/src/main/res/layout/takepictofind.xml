@@ -20,13 +20,13 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="3dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="4dp"
             android:background="#ace0f9" />
 
         <Button
             android:id="@+id/choose_image_btn"
-            android:layout_width="91dp"
-            android:layout_height="44dp"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="4dp"
@@ -36,12 +36,14 @@
             android:background="#fff1eb"
             android:text="อัลบั้มภาพ"
             android:textAllCaps="true"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:drawableLeft="@drawable/ic_collections"/>
 
         <Button
             android:id="@+id/capture_image_btn"
-            android:layout_width="95dp"
+            android:layout_width="150dp"
             android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -54,8 +56,11 @@
             android:text="กล้องถ่ายรูป"
             android:textAllCaps="true"
             android:textColor="#fff"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:drawableLeft="@drawable/ic_ad"
+            />
 
 
     </RelativeLayout>
@@ -63,16 +68,15 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="1dp"
         android:background="#000" />
 
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="328dp"
-        android:layout_height="350dp"
+        android:layout_width="316dp"
+        android:layout_height="325dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_add_a_photo_black_24dp" />
 
@@ -80,54 +84,53 @@
         android:layout_width="match_parent"
         android:layout_height="342dp">
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="233dp"
-            android:layout_height="49dp"
+        <TextView
+            android:id="@+id/textviewcolor1"
+            android:layout_width="235dp"
+            android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="5dp" />
 
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="233dp"
-            android:layout_height="49dp"
-            android:layout_below="@+id/checkBox"
+        <TextView
+            android:id="@+id/textviewcolor2"
+            android:layout_width="235dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/text1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="6dp" />
 
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="233dp"
-            android:layout_height="49dp"
-            android:layout_below="@+id/checkBox2"
+        <TextView
+            android:id="@+id/textviewcolor3"
+            android:layout_width="235dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/text2"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="2dp" />
 
         <Button
             android:id="@+id/save_button"
-            android:layout_width="278dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="65dp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="223dp"
-            android:layout_marginEnd="68dp"
-            android:layout_marginRight="68dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="19dp"
             android:background="@drawable/round_bg"
             android:gravity="center"
             android:text="ถัดไป"
@@ -180,7 +183,89 @@
             android:textColor="#fff"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewcolor1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="4dp"
+            />
 
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewcolor2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="3dp"
+            />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewcolor3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="1dp"
+            />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="381dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="6dp"
+            android:text="ระบุประเภทของเสื้อผ้าตัวนี้"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:gravity="center"
+            android:textColor="#EF1342"
+            android:textStyle="bold"/>
     </RelativeLayout>
 
 </LinearLayout>

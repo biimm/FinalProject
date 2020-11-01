@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gardient_background"
-    tools:context=".function_status"
+    tools:context=".Main2Activity"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:id="@+id/drawer_layout">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu"
-        android:layout_gravity="start"
-        />
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/nav_view"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/main_menu"
+            android:layout_gravity="start"
+            />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -58,13 +58,57 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="255dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_all"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="154dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/image1"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
+                        android:gravity="center_horizontal"
+                        android:text="พร้อมใช้งาน"
+                        android:textColor="#170C0C"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="100dp"
+                        android:layout_height="133dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/status_use"
@@ -80,19 +124,19 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/text1"
-                        android:layout_width="132dp"
+                        android:id="@+id/text2"
+                        android:layout_width="154dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/image1"
+                        android:layout_below="@id/image2"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginLeft="23dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="21dp"
-                        android:layout_marginRight="21dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
                         android:gravity="center_horizontal"
                         android:text="กำลังใช้งาน"
                         android:textColor="#170C0C"
@@ -100,21 +144,21 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/image1"
-                        android:layout_width="95dp"
-                        android:layout_height="95dp"
+                        android:id="@+id/image2"
+                        android:layout_width="100dp"
+                        android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/hanger" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="255dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -136,19 +180,19 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/text2"
-                        android:layout_width="132dp"
+                        android:id="@+id/text3"
+                        android:layout_width="155dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/image2"
+                        android:layout_below="@id/image5"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginLeft="23dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="21dp"
-                        android:layout_marginRight="21dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
                         android:gravity="center_horizontal"
                         android:text="ตะกร้าผ้า"
                         android:textColor="#170C0C"
@@ -156,27 +200,14 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/image2"
-                        android:layout_width="95dp"
-                        android:layout_height="95dp"
+                        android:id="@+id/image5"
+                        android:layout_width="100dp"
+                        android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/laundry" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_washing"
@@ -192,19 +223,19 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/text3"
-                        android:layout_width="132dp"
+                        android:id="@+id/text4"
+                        android:layout_width="154dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/image3"
+                        android:layout_below="@id/image6"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginLeft="23dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="21dp"
-                        android:layout_marginRight="21dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="11dp"
+                        android:layout_marginRight="11dp"
                         android:gravity="center_horizontal"
                         android:text="ส่งซักรีด"
                         android:textColor="#170C0C"
@@ -212,17 +243,15 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/image3"
-                        android:layout_width="95dp"
-                        android:layout_height="95dp"
+                        android:id="@+id/image6"
+                        android:layout_width="100dp"
+                        android:layout_height="133dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/washing" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

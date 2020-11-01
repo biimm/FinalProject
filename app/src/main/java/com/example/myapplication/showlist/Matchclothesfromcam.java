@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import com.example.myapplication.Adapter.ListShowresultfromcam;
 import com.example.myapplication.Main2Activity;
 import com.example.myapplication.R;
-import com.example.myapplication.SearchClothesfromcam;
 import com.example.myapplication.connectDB.Clothesmain;
 
 import java.util.ArrayList;
@@ -65,12 +64,12 @@ public class Matchclothesfromcam extends AppCompatActivity {
         ok = findViewById(R.id.use_btn);
         gridView = findViewById(R.id.gridview_result);
 
-        tonecloth_getsc1 = getIntent().getStringExtra("colorTone1");
-        tonecloth_getsc2 = getIntent().getStringExtra("colorTone2");
-        tonecloth_getsc3 = getIntent().getStringExtra("colorTone3");
+        tonecloth_getsc1 = getIntent().getStringExtra("tone1");
+        tonecloth_getsc2 = getIntent().getStringExtra("tone2");
+        tonecloth_getsc3 = getIntent().getStringExtra("tone3");
 
-        piccloth_getsc = getIntent().getStringExtra("pictofind");
-        typecloth_getsc = getIntent().getStringExtra("typecloth");
+        piccloth_getsc = getIntent().getStringExtra("image");
+        typecloth_getsc = getIntent().getStringExtra("type");
 
 
         id = new ArrayList<>();
@@ -113,7 +112,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
 
         if((tonecloth_getsc1.equals("Black") || tonecloth_getsc2.equals("Black") || tonecloth_getsc3.equals("Black"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น")
-                || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม") || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db1 = clothesmain.getWritableDatabase();
             Cursor c1 = db1.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -177,7 +177,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
 
         if((tonecloth_getsc1.equals("White") || tonecloth_getsc2.equals("White") || tonecloth_getsc3.equals("White"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว") || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น")
-                || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม") || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db2 = clothesmain.getWritableDatabase();
             Cursor c2 = db2.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -260,7 +261,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Gray") || tonecloth_getsc2.equals("Gray") || tonecloth_getsc3.equals("Gray"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db3 = clothesmain.getWritableDatabase();
             Cursor c3 = db3.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -316,7 +317,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Navy") || tonecloth_getsc2.equals("Navy") || tonecloth_getsc3.equals("Navy"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db4 = clothesmain.getWritableDatabase();
             Cursor c4 = db4.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -384,7 +385,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Red") || tonecloth_getsc2.equals("Red") || tonecloth_getsc3.equals("Red"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db5 = clothesmain.getWritableDatabase();
             Cursor c5 = db5.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -461,7 +462,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Orange") || tonecloth_getsc2.equals("Orange") || tonecloth_getsc3.equals("Orange"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db6 = clothesmain.getWritableDatabase();
             Cursor c6 = db6.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -517,7 +518,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Yellow") || tonecloth_getsc2.equals("Yellow") || tonecloth_getsc3.equals("Yellow"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db7 = clothesmain.getWritableDatabase();
             Cursor c7 = db7.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -573,7 +574,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Green") || tonecloth_getsc2.equals("Green") || tonecloth_getsc3.equals("Green"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db8 = clothesmain.getWritableDatabase();
             Cursor c8 = db8.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -637,7 +638,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Jeans") || tonecloth_getsc2.equals("Green") || tonecloth_getsc3.equals("Green"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db44 = clothesmain.getWritableDatabase();
             Cursor c44 = db44.rawQuery( " select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -720,7 +721,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Blue") || tonecloth_getsc2.equals("Blue") || tonecloth_getsc3.equals("Blue"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db9 = clothesmain.getWritableDatabase();
             Cursor c9 = db9.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -782,7 +783,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Purple") || tonecloth_getsc2.equals("Purple") || tonecloth_getsc3.equals("Purple"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db10 = clothesmain.getWritableDatabase();
             Cursor c10 = db10.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -841,7 +842,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Brown") || tonecloth_getsc2.equals("Brown") || tonecloth_getsc3.equals("Brown"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db11 = clothesmain.getWritableDatabase();
             Cursor c11 = db11.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -894,7 +895,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Beige") || tonecloth_getsc2.equals("Beige") || tonecloth_getsc3.equals("Beige"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db12 = clothesmain.getWritableDatabase();
             Cursor c12 = db12.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -950,7 +951,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Tan") || tonecloth_getsc2.equals("Tan") || tonecloth_getsc3.equals("Tan"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db13 = clothesmain.getWritableDatabase();
             Cursor c13 = db13.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1000,7 +1001,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Watercress") || tonecloth_getsc2.equals("Watercress") || tonecloth_getsc3.equals("Watercress"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db14 = clothesmain.getWritableDatabase();
             Cursor c14 = db14.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1050,7 +1051,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Lightpink") || tonecloth_getsc2.equals("Lightpink") || tonecloth_getsc3.equals("Lightpink"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db16 = clothesmain.getWritableDatabase();
             Cursor c16 = db16.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1100,7 +1101,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("lightcoral") || tonecloth_getsc2.equals("lightcoral") || tonecloth_getsc3.equals("lightcoral"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db17 = clothesmain.getWritableDatabase();
             Cursor c17 = db17.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1153,7 +1154,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Lightblue") || tonecloth_getsc2.equals("Lightblue") ||tonecloth_getsc3.equals("Lightblue"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db18 = clothesmain.getWritableDatabase();
             Cursor c18 = db18.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1212,7 +1213,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("LightSalmon") || tonecloth_getsc2.equals("LightSalmon") || tonecloth_getsc3.equals("LightSalmon"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db19 = clothesmain.getWritableDatabase();
             Cursor c19 = db19.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1268,7 +1269,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Lightyellow") || tonecloth_getsc2.equals("Lightyellow") || tonecloth_getsc3.equals("Lightyellow"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db20 = clothesmain.getWritableDatabase();
             Cursor c20 = db20.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1333,7 +1334,7 @@ public class Matchclothesfromcam extends AppCompatActivity {
         if((tonecloth_getsc1.equals("Lightgreen") || tonecloth_getsc2.equals("Lightgreen") || tonecloth_getsc3.equals("Lightgreen"))
                 && (typecloth_getsc.equals("เสื้อยืดแขนสั้น") || typecloth_getsc.equals("เสื้อยืดแขนยาว")
                 || typecloth_getsc.equals("เสื้อเชิ้ตแขนสั้น") || typecloth_getsc.equals("เสื้อเชิ้ตแขนยาว") || typecloth_getsc.equals("เสื้อไหมพรม")
-                || typecloth_getsc.equals("แจ็คเก็ต"))){
+                || typecloth_getsc.equals("เสื้อโปโลแขนยาว") || typecloth_getsc.equals("เสื้อโปโลแขนสั้น"))){
             SQLiteDatabase db21 = clothesmain.getWritableDatabase();
             Cursor c21 = db21.rawQuery("select * from " + TABLE_NAME1
                     + " where " + "(typecloth = " + '"' + "กางเกงขายาว" + '"'
@@ -1396,7 +1397,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Red" + '"'
                     + " or tone1 = " + '"' + "Orange" + '"'
@@ -1460,7 +1462,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
                     + " or tone1 = " + '"' + "Black" + '"'
@@ -1545,7 +1548,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                             + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                             + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                             + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                            + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                            + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                            + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                             + " and " + "(tone1 = " + '"' + "Black" + '"'
                             + " or tone1 = " + '"' + "White" + '"'
                             + " or tone1 = " + '"' + "Gray" + '"'
@@ -1602,7 +1606,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -1671,7 +1676,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -1749,7 +1755,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Navy" + '"'
@@ -1806,7 +1813,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -1863,7 +1871,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -1930,7 +1939,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2014,7 +2024,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2077,7 +2088,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2137,7 +2149,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2192,7 +2205,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2249,7 +2263,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2300,7 +2315,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2352,7 +2368,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2403,7 +2420,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2457,7 +2475,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2517,7 +2536,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2574,7 +2594,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2640,7 +2661,8 @@ public class Matchclothesfromcam extends AppCompatActivity {
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนสั้น" + '"'
                     + " or typecloth = " + '"' + "เสื้อเชิ้ตแขนยาว" + '"'
                     + " or typecloth = " + '"' + "เสื้อไหมพรม" + '"'
-                    + " or typecloth = " + '"' + "แจ็คเก็ต" + '"' + ")"
+                    + " or typecloth = " + '"' + "เสืื้อโปโลแขนสั้น" + '"'
+                    + " or typecloth = " + '"' + "เสื้อโปโลแขนยาว" + '"' + ")"
                     + " and " + "(tone1 = " + '"' + "Black" + '"'
                     + " or tone1 = " + '"' + "White" + '"'
                     + " or tone1 = " + '"' + "Gray" + '"'
@@ -2687,14 +2709,14 @@ public class Matchclothesfromcam extends AppCompatActivity {
             }
         }
     }
-    public void onBackPressed() {
-        super.onBackPressed();
-        this.finish();
-        Intent in = new Intent(this, SearchClothesfromcam.class);
-        startActivity(in);
-        overridePendingTransition(0,0);
-        in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        // moveTaskToBack(true);
-    }
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        this.finish();
+//        Intent in = new Intent(this, SearchClothesfromcam.class);
+//        startActivity(in);
+//        overridePendingTransition(0,0);
+//        in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+//        // moveTaskToBack(true);
+//    }
 
 }

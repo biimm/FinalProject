@@ -15,9 +15,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.example.myapplication.showlist.Matchclothesfromcam;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -38,13 +43,17 @@ public class SearchClothesfromcam extends AppCompatActivity {
     Bitmap bitmap;
     Bitmap imageBitmap;
 
+    Spinner spinner;
+    String datatype;
 
     String currentPhotoPath;
     Uri image_uri;
     Button mCapture, mChoose;
     Button mSave;
     ImageView mImageView;
-    CheckBox checkBox1, checkBox2, checkBox3;
+    TextView textcolor1,textcolor2,textcolor3;
+
+    TextView text1,text2,text3,text;
 
     //check1
     String selectv1 = "#0";
@@ -87,7 +96,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.takepictofind);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -98,13 +107,20 @@ public class SearchClothesfromcam extends AppCompatActivity {
         mChoose = findViewById(R.id.choose_image_btn);
         mSave = findViewById(R.id.save_button);
 
-        checkBox1 = findViewById(R.id.checkBox);
-        checkBox2 = findViewById(R.id.checkBox2);
-        checkBox3 = findViewById(R.id.checkBox3);
+        textcolor1 = findViewById(R.id.textviewcolor1);
+        textcolor2 = findViewById(R.id.textviewcolor2);
+        textcolor3 = findViewById(R.id.textviewcolor3);
+
+        spinner = findViewById(R.id.spinner1);
 
         edit1 = (Button) findViewById(R.id.edit1);
         edit2 = (Button) findViewById(R.id.edit2);
         edit3 = (Button) findViewById(R.id.edit3);
+
+        text = findViewById(R.id.text4);
+        text1 =  findViewById(R.id.text1);
+        text2 =  findViewById(R.id.text2);
+        text3 =  findViewById(R.id.text3);
 
         mImageView.setDrawingCacheEnabled(true);
         mImageView.buildDrawingCache(true);
@@ -132,9 +148,9 @@ public class SearchClothesfromcam extends AppCompatActivity {
                 selectv2 = "#0";
                 selectv3 = "#0";
 
-                checkBox1.setChecked(false);
-                checkBox2.setChecked(false);
-                checkBox3.setChecked(false);
+//                checkBox1.setChecked(false);
+//                checkBox2.setChecked(false);
+//                checkBox3.setChecked(false);
             }
         });
 
@@ -159,9 +175,9 @@ public class SearchClothesfromcam extends AppCompatActivity {
                 selectv2 = "#0";
                 selectv3 = "#0";
 
-                checkBox1.setChecked(false);
-                checkBox2.setChecked(false);
-                checkBox3.setChecked(false);
+//                checkBox1.setChecked(false);
+//                checkBox2.setChecked(false);
+//                checkBox3.setChecked(false);
             }
         });
 
@@ -170,7 +186,8 @@ public class SearchClothesfromcam extends AppCompatActivity {
         colorList.add(new ColorName("Black", 0x00, 0x00, 0x00)); // BW
         colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
         colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
-        colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+        colorList.add(new ColorName("Navy" , 0x02, 0x07, 0x5d)); // BW
+        colorList.add(new ColorName("Jeans" , 0x15 , 0x60 , 0xdb));
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
         colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
@@ -178,9 +195,9 @@ public class SearchClothesfromcam extends AppCompatActivity {
 
         colorList.add(new ColorName("Green", 0x00, 0xff, 0x00)); // cold
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
-        colorList.add(new ColorName("Purple", 0x80, 0x00, 0x80)); // cold
+        colorList.add(new ColorName("Purple", 0x94, 0x00, 0xd3)); // cold
 
-        colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
+        colorList.add(new ColorName("Brown", 0x65, 0x43, 0x21)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
         colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
         colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
@@ -192,28 +209,29 @@ public class SearchClothesfromcam extends AppCompatActivity {
         colorList.add(new ColorName("lightSalmon" , 0xff, 0xa0, 0x7a)); // pastel
         colorList.add(new ColorName("Lightyellow" , 0xff, 0xff, 0xe0)); //pastel
         colorList.add(new ColorName("Lightgreen" , 0x90, 0xee, 0x90)); // pastel
-
+        colorList.add(new ColorName("Pastelpurple" , 0xb1,0xa2,0xca));
 
         edit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkedit1 = true;
-                checkBox1.getBackground().clearColorFilter();
-                checkBox1.setText("โปรดเลือกสีอีกครั้ง");
+//                checkedit1 = true;
+//                checkBox1.getBackground().clearColorFilter();
+                //checkBox1.setText("โปรดเลือกสีอีกครั้ง");
                 v1 = "#0";
                 colorv1 = "#0";
+
+                text1.setText("แตะสีที่ต้องการเปลี่ยนที่รูปภาพ");
 
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View view, MotionEvent motionEvent) {
                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN || motionEvent.getAction() == MotionEvent.ACTION_MOVE) {
-                            if(checkedit1 == true) {
+
                                 Bitmap bitmap = mImageView.getDrawingCache();
                                 int pixel = bitmap.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
                                 int redvalue = Color.red(pixel);
                                 int greenvalue = Color.green(pixel);
                                 int bluevalue = Color.blue(pixel);
-
 
                                 int min = Integer.MAX_VALUE;
                                 int name = 0;
@@ -242,11 +260,12 @@ public class SearchClothesfromcam extends AppCompatActivity {
                                 String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
                                 v1 = hex;
                                 colorv1 = v1;
-                                checkBox1.setBackgroundColor(Color.parseColor(hex));
+                                textcolor1.setBackgroundColor(Color.parseColor(hex));
                                 System.out.println("Hex : " + hex);
-                                checkBox1.setText("");
+                                text1.setText("");
+                                select_tone1 = name_color_tone1;
                                 checkedit1 = false;
-                            }
+
                         }
                         return true;
                     }
@@ -257,16 +276,19 @@ public class SearchClothesfromcam extends AppCompatActivity {
         edit2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkedit2 = true;
-                checkBox2.getBackground().clearColorFilter();
-                checkBox2.setText("โปรดเลือกสีอีกครั้ง");
+//                checkedit2 = true;
+//                checkBox2.getBackground().clearColorFilter();
+                //checkBox2.setText("โปรดเลือกสีอีกครั้ง");
                 v2 = "#0";
                 colorv2 = "#0";
+
+                text2.setText("แตะสีที่ต้องการเปลี่ยนที่รูปภาพ");
+
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent motionEvent) {
                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN || motionEvent.getAction() == MotionEvent.ACTION_MOVE) {
-                            if(checkedit2 == true) {
+
                                 Bitmap bitmap = mImageView.getDrawingCache();
                                 int pixel = bitmap.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
                                 int redvalue = Color.red(pixel);
@@ -300,11 +322,12 @@ public class SearchClothesfromcam extends AppCompatActivity {
                                 String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
                                 v2 = hex;
                                 colorv2 = v2;
-                                checkBox2.setBackgroundColor(Color.parseColor(hex));
+                                textcolor2.setBackgroundColor(Color.parseColor(hex));
                                 System.out.println("Hex : " + hex);
-                                checkBox2.setText("");
+                                text2.setText("");
+                                select_tone2 = name_color_tone2;
                                 checkedit2 = false;
-                            }
+
                         }
                         return true;
                     }
@@ -315,17 +338,19 @@ public class SearchClothesfromcam extends AppCompatActivity {
         edit3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkedit3 = true;
-                checkBox3.getBackground().clearColorFilter();
-                checkBox3.setText("โปรดเลือกสีอีกครั้ง");
+//                checkedit3 = true;
+//                checkBox3.getBackground().clearColorFilter();
+                // checkBox3.setText("โปรดเลือกสีอีกครั้ง");
                 v3 = "#0";
                 colorv3 = "#0";
+
+                text3.setText("แตะสีที่ต้องการเปลี่ยนที่รูปภาพ");
 
                 mImageView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent motionEvent) {
                         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN || motionEvent.getAction() == MotionEvent.ACTION_MOVE) {
-                            if(checkedit3 == true) {
+
                                 Bitmap bitmap = mImageView.getDrawingCache();
                                 int pixel = bitmap.getPixel((int) motionEvent.getX(), (int) motionEvent.getY());
                                 int redvalue = Color.red(pixel);
@@ -361,11 +386,12 @@ public class SearchClothesfromcam extends AppCompatActivity {
                                 String hex = String.format("#%02x%02x%02x", redvalue, greenvalue, bluevalue);
                                 v3 = hex;
                                 colorv3 = v3;
-                                checkBox3.setBackgroundColor(Color.parseColor(hex));
+                                textcolor3.setBackgroundColor(Color.parseColor(hex));
                                 System.out.println("Hex : " + hex);
-                                checkBox3.setText("");
+                                text3.setText("");
+                                select_tone3 = name_color_tone3;
                                 checkedit3 = false;
-                            }
+
                         }
                         return true;
                     }
@@ -373,73 +399,94 @@ public class SearchClothesfromcam extends AppCompatActivity {
             }
         });
 
-        checkBox1.setOnClickListener(new View.OnClickListener() {
+//        checkBox1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (((CheckBox) v).isChecked()) {
+//                    //Toast.makeText(Main3Activity.this, "select c1", Toast.LENGTH_SHORT).show();
+//                    selectv1 = colorv1;
+//                    System.out.println(selectv1);
+//                    //name_color = name_color1;
+//                    select_tone1 = name_color_tone1;
+//                    System.out.println("name_select : " + select_tone1);
+//
+//                } else {
+//                    selectv1 = "#0";
+//                    select_tone1 = "";
+//                }
+//            }
+//        });
+//        checkBox2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (((CheckBox) v).isChecked()) {
+//                    //Toast.makeText(Main3Activity.this, "select c2", Toast.LENGTH_SHORT).show();
+//                    selectv2 = colorv2;
+//                    System.out.println(selectv2);
+//                    // name_color = name_color2;
+//                    select_tone2 = name_color_tone2;
+//                    System.out.println("name_select : " + select_tone2);
+//
+//                } else {
+//                    selectv2 = "#0";
+//                    select_tone2 = "";
+//                }
+//            }
+//        });
+//        checkBox3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (((CheckBox) v).isChecked()) {
+//                    //Toast.makeText(Main3Activity.this, "select c3", Toast.LENGTH_SHORT).show();
+//                    selectv3 = colorv3;
+//                    System.out.println(selectv3);
+//                    //name_color = name_color3;
+//                    select_tone3 = name_color_tone3;
+//                    System.out.println("name_select : " + select_tone3);
+//
+//                } else {
+//                    selectv3 = "#0";
+//                    select_tone3 = "";
+//                }
+//            }
+//        });
+
+        /////// Spinner type
+        ArrayAdapter<CharSequence> adaptertype = ArrayAdapter.createFromResource(this, R.array.Spinner_type, android.R.layout.simple_spinner_item);
+        adaptertype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adaptertype);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                if (((CheckBox) v).isChecked()) {
-                    //Toast.makeText(Main3Activity.this, "select c1", Toast.LENGTH_SHORT).show();
-                    selectv1 = colorv1;
-                    System.out.println(selectv1);
-                    //name_color = name_color1;
-                    select_tone1 = name_color_tone1;
-                    System.out.println("name_select : " + select_tone1);
-
-                } else {
-                    selectv1 = "#0";
-                    select_tone1 = "";
-                }
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                datatype = (String) parent.getItemAtPosition(position);
+//               Toast.makeText(getApplicationContext(),"Select type : "+datatype,Toast.LENGTH_SHORT).show();
             }
-        });
-        checkBox2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (((CheckBox) v).isChecked()) {
-                    //Toast.makeText(Main3Activity.this, "select c2", Toast.LENGTH_SHORT).show();
-                    selectv2 = colorv2;
-                    System.out.println(selectv2);
-                    // name_color = name_color2;
-                    select_tone2 = name_color_tone2;
-                    System.out.println("name_select : " + select_tone2);
-
-                } else {
-                    selectv2 = "#0";
-                    select_tone2 = "";
-                }
-            }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
-        checkBox3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (((CheckBox) v).isChecked()) {
-                    //Toast.makeText(Main3Activity.this, "select c3", Toast.LENGTH_SHORT).show();
-                    selectv3 = colorv3;
-                    System.out.println(selectv3);
-                    //name_color = name_color3;
-                    select_tone3 = name_color_tone3;
-                    System.out.println("name_select : " + select_tone3);
-
-                } else {
-                    selectv3 = "#0";
-                    select_tone3 = "";
-                }
-            }
-        });
-
-
 
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchClothesfromcam.this,SearchClothesfromcam2.class);
-                intent.putExtra("image" , targetUri.toString());
-                intent.putExtra("color1", selectv1);
-                intent.putExtra("color2", selectv2);
-                intent.putExtra("color3", selectv3);
-                intent.putExtra("tone1" , select_tone1);
-                intent.putExtra("tone2" , select_tone2);
-                intent.putExtra("tone3" , select_tone3);
 
-                startActivity(intent);
+                if(datatype.equals("โปรดเลือกประเภทเสื้อผ้า") ) {
+                    if (datatype.equals("โปรดเลือกประเภทเสื้อผ้า")) {
+                        text.setText("กรุณาเลือกประเภทเสื้อผ้า");
+                    } else {
+                        text.setText("");
+                    }
+                }
+                else{
+                    Intent intent = new Intent(SearchClothesfromcam.this, Matchclothesfromcam.class);
+                    intent.putExtra("image" , targetUri.toString());
+                    intent.putExtra("type" , datatype);
+                    intent.putExtra("tone1" , select_tone1);
+                    intent.putExtra("tone2" , select_tone2);
+                    intent.putExtra("tone3" , select_tone3);
+
+                    startActivity(intent);
+                }
+
             }
         });
     }
@@ -513,6 +560,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
     }
 
 
+
     //extract dominent colors
     private void extractProminentColors(Bitmap bitmap){
         int defaultColor = 0x000000;
@@ -524,6 +572,7 @@ public class SearchClothesfromcam extends AppCompatActivity {
         colorList.add(new ColorName("White", 0xff, 0xff, 0xff)); // BW
         colorList.add(new ColorName("Gray", 0x80, 0x80, 0x80)); // BW
         colorList.add(new ColorName("Navy" , 0x00, 0x00, 0x80)); // BW
+        colorList.add(new ColorName("Jeans" , 0x15 , 0x60 , 0xdb));
 
         colorList.add(new ColorName("Red", 0xff, 0x00, 0x00)); // hot
         colorList.add(new ColorName("Orange", 0xff, 0x80, 0x00)); // hot
@@ -531,12 +580,12 @@ public class SearchClothesfromcam extends AppCompatActivity {
 
         colorList.add(new ColorName("Green", 0x00, 0xff, 0x00)); // cold
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xff)); // cold
-        colorList.add(new ColorName("Purple", 0x80, 0x00, 0x80)); // cold
+        colorList.add(new ColorName("Purple", 0x94, 0x00, 0xd3));  // cold
 
-        colorList.add(new ColorName("Brown", 0xa5, 0x2a, 0x2a)); // earth
+        colorList.add(new ColorName("Brown", 0x65, 0x43, 0x21)); // earth
         colorList.add(new ColorName("Beige" , 0xf5, 0xf5, 0xdc)); // earth
         colorList.add(new ColorName("Tan" , 0xd2, 0xb4, 0x8c)); // earth
-        colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
+        //colorList.add(new ColorName("Olive" , 0x80, 0x80, 0x00)); // earth
         colorList.add(new ColorName("Watercress" , 0x6e , 0x93 , 0x77)); // earth
 
 
@@ -588,8 +637,8 @@ public class SearchClothesfromcam extends AppCompatActivity {
         //System.out.println("C1 : " + c1);
         System.out.println("test1 :" + testname1);
 
-        checkBox1.setBackgroundColor(VibrantColor);
-
+        textcolor1.setBackgroundColor(VibrantColor);
+        select_tone1 = name_color_tone1;
         /// สีหม่นออกสว่าง
 
 
@@ -629,8 +678,8 @@ public class SearchClothesfromcam extends AppCompatActivity {
         //System.out.println("C2 : " + c2);
         System.out.println("test2 :" + testname2);
 
-        checkBox2.setBackgroundColor(MutedColorLight);
-
+        textcolor2.setBackgroundColor(MutedColorLight);
+        select_tone1 = name_color_tone2;
         /// สีหม่นปานกลาง
 //            int MutedColor = p.getMutedColor(defaultColor);
 //            v3 = String.format("#%X", MutedColor);
@@ -683,7 +732,16 @@ public class SearchClothesfromcam extends AppCompatActivity {
         //System.out.println("C3 : " + c3);
         System.out.println("test3 :" + testname3);
 
-        checkBox3.setBackgroundColor(MutedColorDark);
-
+        textcolor3.setBackgroundColor(MutedColorDark);
+        select_tone3 = name_color_tone3;
+    }
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+        Intent in = new Intent(this, Main2Activity.class);
+        in.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(in);
+        overridePendingTransition(0,0);
+        // moveTaskToBack(true);
     }
 }
